@@ -1,0 +1,11 @@
+---
+title: "Week_1_Basics"
+author: "Laura Palacios"
+date: '2022-09-28'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(echo = TRUE)
+```
