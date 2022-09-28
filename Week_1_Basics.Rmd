@@ -10,3 +10,126 @@ library(knitr)
 opts_chunk$set(echo = TRUE)
 ```
 
+Installing packages
+```{r}
+
+```
+
+Installing libraries
+```{r}
+
+```
+
+Coding basics
+
+i.	R variables
+1.	logical
+2.	numeric
+3.	integer
+4.	complex
+5.	character
+6.	raw
+```{r}
+
+```
+
+
+ii.	How to assign a variable
+```{r}
+
+```
+
+iii.	Checking variable type
+```{r}
+
+```
+
+iv.	Base operators
+
+1.	Arithmetic
+2.	Math – min/max/sum
+3.	Equal or unequal
+4.	And vs Or 
+5.	%in%
+```{r}
+
+```
+
+v.	Base Functions
+```{r}
+
+```
+
+1.	Print
+```{r}
+
+```
+
+2.	Concatenate
+```{r}
+
+```
+
+3.	Is.na()
+```{r}
+
+```
+
+vi.	Data Classes: String vs list vs data frame 
+```{r}
+
+```
+
+vii.	Indexing
+
+
+
+
+ADJECTIVE
+ANIMAL
+PLACE
+VERB_Present
+NOUN
+VERB_Past
+ADVERB
+EXCLAMATION
+FRIEND_NAME
+CELEBRITY
+SILLY_WORD
+NUMBER
+ADJECTIVE2
+NOUN_Plural
+ADJECTIVE3
+VERB_Past2
+BODY_PART_Plural
+VERB_
+NOUN_PLURAL_2
+VERB_ING
+NOUN_PLURAL_2
+ADJECTIVE4
+
+
+
+
+
+
+
+
+```{r}
+print('The Best Halloween Party Ever
+Last night I went to the most ' _________ Halloween
+party! The invitation was delivered by ____________
+and told me to go to the deep dark ______________
+and _________ all the way to the very top of the
+spooky __________. I __________ the doorbell
+__________. ___________! My friend __________ answered
+the door dressed up as _____________ and said
+“______________!” There were _________ different 
+costumes, including _____________ ghouls and mummified
+_____________. The music was loud and ___________, so
+I ______________ until my __________ hurt. There were
+also delicious treats to __________, like candy corn and
+chocolate-covered ______________, but my favourite part of
+the party was the pumpkin _____________ and bobbing for
+______________. I can’t wait until next Halloween—
+it will be even more ______________!')
