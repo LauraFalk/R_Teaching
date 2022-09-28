@@ -4,8 +4,9 @@ author: "Laura Palacios"
 date: '2022-09-28'
 output: html_document
 ---
-
+Hello! Welcome to Laura and Sam's R101 teaching sessions! Today we're going to go over some of the R basics.  
 ```{r setup, include=FALSE}
 library(knitr)
 opts_chunk$set(echo = TRUE)
 ```
+
