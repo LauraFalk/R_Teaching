@@ -1,135 +1,359 @@
 ---
 title: "Week_1_Basics"
-author: "Laura Palacios"
+author: "Laura Palacios and Samantha Olivares-Mejia"
+learner:
 date: '2022-09-28'
 output: html_document
 ---
-Hello! Welcome to Laura and Sam's R101 teaching sessions! Today we're going to go over some of the R basics.  
 ```{r setup, include=FALSE}
 library(knitr)
 opts_chunk$set(echo = TRUE)
 ```
 
-Installing packages
+# R101 - Week 1
+
+Hello! Welcome to Laura and Sam's R101 teaching sessions! Today we're going to go over some of the R basics.
+
+## Navigating R studio
+
+## Projects vs Single Scripts
+
+## RMD format
+
+## Installing packages
+
+## Installing libraries
+
+## R Variables
+
+### What is an R variable?
+A variable is a way to store a piece of information. It can later be used to reference or manipulate.
+
+
+### How does it work?
+The information is first named, then assigned a value. The value assignment can either be done directly by the user or programmatically assigned.
+
+**TO DO** Below, write the most commonly used way of assigning a value in R.
+
+How to assign a value:
+
+*Hint: Python uses an =.*
+
+*Hint: Example seen below.*
+
+
+### Variable names
+There are some rules to follow when assigning names. These include:
+  1. Easy to understand
+  2. No spaces or special characters.
+  3. Starts with a letter. 
+  4. Letter is is followed by any letter, number, underscore, or period.
+  5. No reserved words (reserved words are used in arguements and may cause computer confusion if used as a variable name)  Here is a list: https://rdrr.io/r/base/Reserved.html
+  
+**TO DO** Write a possible name for a variable which contains bird data
+
+Bird data variable name:
+
+*Hint: One example could be frequent_flyers*
+
+
+### Variable practice
+To start, we'll assign some simple variables for the different types of data that R uses.
+
+#### 1. Numeric data
+Variables can be assigned any number.
+
+Here is an example:
+```{r}
+# R can hold whole numbers
+Whole_Number <- 1
+# R can hold multiple decimal places
+Decimal <- 7.5895892
+```
+Run this code chunk (click the green arrow in the top right of the chunk).
+
+Notice the environment (top right) now contains your variables and their assigned values.
+
+  
+**TO DO** Assign the variables in the code block below
+```{r}
+# Assign a negative number 
+Negative_Number <- 9999
+  
+# Assign any other number
+Any_Number <- 9999
+```
+*Tip: Notice that when a variable is properly assigned it changes color*
+
+
+**TO DO** Assign a new number to the Decimal variable
+```{r}
+# Assign a new number
+Decimal <-9999
+```
+Notice that the value has changed in your environment. 
+
+
+**TO DO** What value would appear if we ran the first code again?
+Answer:
+*Hint: The value is always overwritten.*
+
+#### 2. Integers
+Integers are a numeric value with no decimal points.
+
+A suffix of L indicates that the value is an integer.Example below.
+```{r}
+# Integer assignment example
+Integer <- 1L
+```
+
+
+**TO Do** Assign your own integer
+```{r}
+My_Integer <- 9999
+```
+*Tip: Integers have a numeric color when properly assigned*
+
+#### 3. Character data
+Character data  can include words, sentences, filepaths, etc. It is stored and treated as a block of text.
+
+Example:
+```{r}
+# Notice that single quotes are used to indicate the string component
+Magical_Phrase <- 'Hello World'
+```
+Notice that the character data also occurs in your environment.
+
+**TO DO** Lets try assigning some:
+```{r}
+# Assign a descriptive word
+Adjective <- '9999'
+
+# Assign your favorite animal
+Animal <- '9999'
+  
+# Assign a place
+Place <- '9999'
+
+# Assign a celebrity name
+Celebrity <- '9999'
+
+# Assign anything!
+Thing <- '9999'
+
+# Assign a different thing
+# Notice the 2 indicates that this is a different variable and the original Thing is not overwritten.
+Thing2 <- '9999'
+```
+
+**TO DO** Can I use double quotes?
+```{r}
+#Assign a happy phrase in double quotation marks (")
+Exclamation <- "9999"
+```
+*Hint: Yes! Single or double quotes may be used.*
+
+**TO DO** Can I use more than one word?
+```{r}
+# Write the favorite activity you did last week
+# Example: Activity <- "swam in the pool" 
+#or
+#Example: Activity <- "Ran on a trail"
+Activity <- "9999"
+```
+*Hint: The quotation marks should be placed around the entire phrase*
+
+#### 4. Complex
+Complex data handles imaginary numbers in R
+
+Imaginary numbers are indicated with an i.
+
+**To Do** Replace this imaginary animal with an imaginary number such as 2i.
+```{r}
+# Attribute the imaginary variable with 
+Imaginary <- 'Unicorn'
+```
+*Hint: Complex values do not require quotation marks, proper formatting will change the color to the numeric color*
+
+#### 5. Logical/ Boolean
+Logical data is True or False.
+
+Example:
+```{r}
+Logic_True <- TRUE
+```
+Notice that the TRUE value is all caps and the color is the same as the complex and numeric variables.
+
+**To Do** Create a false variable
+```{r}
+Logic_False <- 9999
+```
+*Tip: Autofill can be used. After typing "FAL" a dropdown will appear. Press down arrow and enter OR click to select*
+
+#### 6. Raw
+Converts other data types to raw bytes. This is not a common type.
+
+Example:
+chartoRaw() and intToBits() are used to convert a value to a raw variable type.
+```{r}
+# Character to raw example
+Raw_Character <- charToRaw("Hello World")
+# Integer to bits example
+Raw_Int <- intToBits(7L)
+```
+
+
+## R Data Structures
+
+### What are data structures?
+Data structures are storage components for holding multiple values.
+
+#### 1. Vectors 
+A vector is a collection of data values, such as characters, logical, integer, or numeric.It can be treated like a single column on a table.
+
+Example. Here is a character vector. Use the notation c() (column) to create the collection of values.
+```{r}
+Character_Vector <- c('Snoopy', 'Charlie Brown', 'Linus')
+```
+Notice the environment show characters [1:3] (count of data) then lists the values
+
+
+**To do** 
+Create a numeric vector
+```{r}
+Number_Vector <- 9999
+```
+*Hint: separate values with commas and use the c() notation*
+
+
+Vectors can use a combination of data types.
+**To do**
+Create a vector with 3 components of different data types.
+```{r}
+Mixed_Vector <- 9999
+```
+*Hint: Try character, integer, numeric, or logical*
+
+
+Data structures, including vectors, can also reference previously created variables by using their names.
+```{r}
+My_List <- c(Animal, Celebrity, My_Integer)
+```
+*Tip: Notice that this becomes a chr (character) list (shown in the environment). R will automatically determine an appropriate format unless otherwise specified by you*
+
+#### 2. Lists
 ```{r}
 
 ```
 
-Installing libraries
+#### 3. DataFrames
 ```{r}
 
 ```
 
-Coding basics
+#### 4. Matrices
+```{r}
 
-i.	R variables
-1.	logical
-2.	numeric
-3.	integer
-4.	complex
-5.	character
-6.	raw
+```
+
+#### 5. Arrays
+```{r}
+
+```
+
+#### 6. Factors
 ```{r}
 
 ```
 
 
-ii.	How to assign a variable
-```{r}
 
-```
+Checking variable type
 
-iii.	Checking variable type
-```{r}
-
-```
-
-iv.	Base operators
-
+Base operators
 1.	Arithmetic
 2.	Math – min/max/sum
 3.	Equal or unequal
 4.	And vs Or 
 5.	%in%
+
+Sam please find a way to attribute numbers A-E for the activity.
 ```{r}
+Number_A <- 9999
+Number_B <- 9999
+Number_C <- 9999
+Number_D <- 9999
+Number_E <- 9999
+```
+
+Base Functions
+
+Print
+
+Concatenate
+
+Is.na()
+
+Indexing
+Sam - please find a way to use activity[1]. and assign to "Verb" for the activity.
+```{r}
+Verb <- Activity[1]
+```
+
+
+
+
+
+
+
+```{r, include = FALSE}
+
+
+######################### End of Document. Stop here#########################################
+
 
 ```
 
-v.	Base Functions
-```{r}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r, include = FALSE}
+
+
+##################### I mean it, stop scrolling, you'll ruin the surprise. #######################
+
 
 ```
 
-1.	Print
-```{r}
 
+
+
+
+
+
+```{r, include = FALSE}
+print('The Best Halloween Party Ever') 
+sprintf("Last night I went to the most %s Halloween party! The invitation was delivered by %s and it told me to go to the deep dark %s. I %s the doorbell %f times.My friend answered the door dressed up as %s and said '%s!' There were %f different costumes, including %f ghouls and %f mummified %ss. There were also delicious treats to eat like candy corn and %f candy bars, but my favourite part of the party was the pumpkin carving and bobbing for %ss. I can't wait until next Halloween!'", Adjective, Animal, Place, Verb, Number_A, Celebrity, Exclamation, Number_B, Number_C, Number_D,Thing, Number_E, Thing2)
 ```
-
-2.	Concatenate
-```{r}
-
-```
-
-3.	Is.na()
-```{r}
-
-```
-
-vi.	Data Classes: String vs list vs data frame 
-```{r}
-
-```
-
-vii.	Indexing
-
-
-
-
-ADJECTIVE
-ANIMAL
-PLACE
-VERB_Present
-NOUN
-VERB_Past
-ADVERB
-EXCLAMATION
-FRIEND_NAME
-CELEBRITY
-SILLY_WORD
-NUMBER
-ADJECTIVE2
-NOUN_Plural
-ADJECTIVE3
-VERB_Past2
-BODY_PART_Plural
-VERB_
-NOUN_PLURAL_2
-VERB_ING
-NOUN_PLURAL_2
-ADJECTIVE4
-
-
-
-
-
-
-
-
-```{r}
-print('The Best Halloween Party Ever
-Last night I went to the most ' _________ Halloween
-party! The invitation was delivered by ____________
-and told me to go to the deep dark ______________
-and _________ all the way to the very top of the
-spooky __________. I __________ the doorbell
-__________. ___________! My friend __________ answered
-the door dressed up as _____________ and said
-“______________!” There were _________ different 
-costumes, including _____________ ghouls and mummified
-_____________. The music was loud and ___________, so
-I ______________ until my __________ hurt. There were
-also delicious treats to __________, like candy corn and
-chocolate-covered ______________, but my favourite part of
-the party was the pumpkin _____________ and bobbing for
-______________. I can’t wait until next Halloween—
-it will be even more ______________!')
+ 
