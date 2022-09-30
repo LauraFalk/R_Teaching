@@ -382,6 +382,8 @@ going to go over some of the R basics.</p>
 </div>
 <div id="rmd-format" class="section level2">
 <h2>RMD format</h2>
+<pre class="r"><code># Sam, 
+#Can you briefly mention that symbols (# and &lt;&gt;) indicate output formatting. I think we can have a whole separate section on this, but I don&#39;t want people to be confused. OR, if you hate the idea, we can remove the formatting?</code></pre>
 </div>
 <div id="installing-packages" class="section level2">
 <h2>Installing packages</h2>
@@ -423,7 +425,7 @@ contains bird data</p>
 <div id="variable-practice" class="section level3">
 <h3>Variable practice</h3>
 <p>To start, we’ll assign some simple variables for the different types
-of data that R uses.</p>
+of data that R uses. <br /><br /></p>
 <div id="numeric-data" class="section level4">
 <h4>1. Numeric data</h4>
 <p>Variables can be assigned any number.</p>
@@ -451,7 +453,10 @@ variable</p>
 Decimal &lt;-9999</code></pre>
 <p>Notice that the value has changed in your environment.</p>
 <p><strong>TO DO</strong> What value would appear if we ran the first
-code again? Answer: <em>Hint: The value is always overwritten.</em></p>
+code (Decimal &lt;- 7.5895892) again?</p>
+<p>Answer:</p>
+<p><em>Hint: The value is always overwritten by the last code block,
+regardless of order in script.</em> <br /><br /></p>
 </div>
 <div id="integers" class="section level4">
 <h4>2. Integers</h4>
@@ -462,8 +467,8 @@ below.</p>
 Integer &lt;- 1L</code></pre>
 <p><strong>TO Do</strong> Assign your own integer</p>
 <pre class="r"><code>My_Integer &lt;- 9999</code></pre>
-<p><em>Tip: Integers have a numeric color when properly
-assigned</em></p>
+<p><em>Tip: Integers have a numeric color when properly assigned</em>
+<br /><br /></p>
 </div>
 <div id="character-data" class="section level4">
 <h4>3. Character data</h4>
@@ -479,9 +484,6 @@ Adjective &lt;- &#39;9999&#39;
 
 # Assign your favorite animal
 Animal &lt;- &#39;9999&#39;
-  
-# Assign a place
-Place &lt;- &#39;9999&#39;
 
 # Assign a celebrity name
 Celebrity &lt;- &#39;9999&#39;
@@ -503,7 +505,7 @@ Exclamation &lt;- &quot;9999&quot;</code></pre>
 #Example: Activity &lt;- &quot;Ran on a trail&quot;
 Activity &lt;- &quot;9999&quot;</code></pre>
 <p><em>Hint: The quotation marks should be placed around the entire
-phrase</em></p>
+phrase</em> <br /><br /></p>
 </div>
 <div id="complex" class="section level4">
 <h4>4. Complex</h4>
@@ -514,19 +516,23 @@ imaginary number such as 2i.</p>
 <pre class="r"><code># Attribute the imaginary variable with 
 Imaginary &lt;- &#39;Unicorn&#39;</code></pre>
 <p><em>Hint: Complex values do not require quotation marks, proper
-formatting will change the color to the numeric color</em></p>
+formatting will change the color to the numeric color</em>
+<br /><br /></p>
 </div>
 <div id="logical-boolean" class="section level4">
 <h4>5. Logical/ Boolean</h4>
 <p>Logical data is True or False.</p>
 <p>Example:</p>
-<pre class="r"><code>Logic_True &lt;- TRUE</code></pre>
+<pre class="r"><code># Assign as a TRUE logical value.
+Logic_True &lt;- TRUE</code></pre>
 <p>Notice that the TRUE value is all caps and the color is the same as
 the complex and numeric variables.</p>
 <p><strong>To Do</strong> Create a false variable</p>
-<pre class="r"><code>Logic_False &lt;- 9999</code></pre>
+<pre class="r"><code># Assign a false logical value
+Logic_False &lt;- 9999</code></pre>
 <p><em>Tip: Autofill can be used. After typing “FAL” a dropdown will
-appear. Press down arrow and enter OR click to select</em></p>
+appear. Press down arrow and enter OR click to select</em>
+<br /><br /></p>
 </div>
 <div id="raw" class="section level4">
 <h4>6. Raw</h4>
@@ -545,25 +551,141 @@ Raw_Int &lt;- intToBits(7L)</code></pre>
 <h2>R Data Structures</h2>
 <div id="what-are-data-structures" class="section level3">
 <h3>What are data structures?</h3>
-<p>Data structures are storage components for holding multiple
-values.</p>
+<p>Data structures are storage components for holding multiple values.
+<br /><br /></p>
 <div id="vectors" class="section level4">
 <h4>1. Vectors</h4>
+<p>A vector is a collection of data values, such as characters, logical,
+integer, or numeric. It can be treated like a single column on a
+table.</p>
+<p>Example. Here is a character vector. Use the notation c() (column) to
+create the collection of values.</p>
+<pre class="r"><code>Character_Vector &lt;- c(&#39;Snoopy&#39;, &#39;Charlie Brown&#39;, &#39;Linus&#39;)</code></pre>
+<p><em>Tip: Notice the environment show characters [1:3] (count of data)
+then lists the values</em></p>
+<p><strong>To do</strong> Create an Atomic Vector, a vector that
+consists of one value, containing your favorite location.</p>
+<pre class="r"><code># Assign a place
+Place &lt;- &#39;9999&#39;</code></pre>
+<p><em>Hint: We made atomic vectors in the Variables section</em></p>
+<p><strong>To do</strong> Create a numeric vector</p>
+<pre class="r"><code>Number_Vector &lt;- 9999</code></pre>
+<p><em>Hint: separate values with commas and use the c()
+notation</em></p>
+<p>Vectors can use a combination of data types. <strong>To do</strong>
+Create a vector with 3 components of different data types.</p>
+<pre class="r"><code>Mixed_Vector &lt;- 9999</code></pre>
+<p><em>Hint: Try a mix character, integer, numeric, or logical
+values</em></p>
+<p>Data structures, including vectors, can also reference previously
+created variables by using their names.</p>
+<pre class="r"><code>My_Vector &lt;- c(Animal, Celebrity, My_Integer)</code></pre>
+<p><em>Tip: Notice that this becomes a chr (character) list (shown in
+the environment). R will automatically determine an appropriate format
+unless otherwise specified by you</em> <br /><br /></p>
 </div>
 <div id="lists" class="section level4">
 <h4>2. Lists</h4>
+<p>A list is a collection of data values, such as characters, logical,
+integer, or numeric. So why is this different than a vector?</p>
+<p>Lists are ordered, recursive (loopable) and multidimensional! (They
+are more complex so you can do more things!)</p>
+<p>Here is an example of a simple list</p>
+<pre class="r"><code>List_Example&lt;- list(&#39;test&#39;, 1, 2, 3)</code></pre>
+<p>Notice that the list appears in the data section of the
+environment.</p>
+<p>Is it possible to create a list of other items?</p>
+<p><strong>TO DO:</strong> Create a list of your vector (My_Vector),
+List Example(List_Example), and one other atomic vector you previously
+created.</p>
+<pre class="r"><code>List_Of_Lists &lt;- 9999</code></pre>
+<p><em>Hint: Use the function list() to create a list</em>
+<br /><br /></p>
 </div>
 <div id="dataframes" class="section level4">
 <h4>3. DataFrames</h4>
+<p>A data frame is a two dimensional way to store data, similar to a
+sheet in Microsoft Excel or Google sheets. We can also think of it as
+two or more vectors.</p>
+<p>Example: Here is a simple dataframe created in R.</p>
+<pre class="r"><code># Create a vector for the first column
+Song &lt;- c(&quot;Rings&quot;, &quot;Birds&quot;, &quot;Hens&quot;, &quot;Doves&quot;, &quot;Partridge in a Pear Tree&quot;)
+# Create a vector for the second column (same length)
+Count &lt;- c(5,4,3,2,1)
+
+#Create the dataframe
+Example_Dataframe &lt;- data.frame(Song,Count)</code></pre>
+<p><em>Tip: click on the data frame from the environment to open a new
+tab and view the sheet</em> <em>Tip: press the down arrow in the
+environment to see a summary of data frame contents</em></p>
+<p>Please note. For most of SWNC work, we will be importing data frames
+(such as CSV files) rather than creating our own. This will be covered
+in another session. <br /><br /></p>
 </div>
 <div id="matrices" class="section level4">
 <h4>4. Matrices</h4>
+<p>A matrix is a set of rows and columns which organizes values of the
+same data type.</p>
+<p>Mathmatical functions can be applied to matrices for complex
+analyses. Here is an example matrix created in R:</p>
+<pre class="r"><code># The matrix creation requires the values (1-9), number of rows and/or number of columns)
+Matrix_example &lt;- matrix(c(1:9), nrow = 3, ncol = 3)</code></pre>
+<p><em>Tip: Click on the matrix example in the environment to open a new
+tab and view all data</em> <br /><br /></p>
 </div>
 <div id="arrays" class="section level4">
 <h4>5. Arrays</h4>
+<p>Arrays are objects with two or more dimensions. Again, these are used
+for more complicated analyses in R.</p>
+<p>Example, a three dimensional array can be thought of as three stacked
+matrices, which will have a number of columns, rows and height.</p>
+<pre class="r"><code>Array_Example &lt;- array(0, dim = c(2, 2, 3))
+print(Array_Example)</code></pre>
+<pre><code>## , , 1
+## 
+##      [,1] [,2]
+## [1,]    0    0
+## [2,]    0    0
+## 
+## , , 2
+## 
+##      [,1] [,2]
+## [1,]    0    0
+## [2,]    0    0
+## 
+## , , 3
+## 
+##      [,1] [,2]
+## [1,]    0    0
+## [2,]    0    0</code></pre>
+<p><em>Tip: The array is considered a “value” in the environment of
+Rstudio. You can easily view the array (or any other object) by using
+the print() function to show it below a code block. We will go into more
+detail of the print() function later.</em> <br /><br /></p>
 </div>
 <div id="factors" class="section level4">
 <h4>6. Factors</h4>
+<p>Factors are used to store categorical (grouped) data in a way that
+can be used for calculations or other machine learning processes.</p>
+<p>Factors can be ordinal (they have a rank or values are ordered) or
+non-ordinal. Here is an example:</p>
+<pre class="r"><code># Create the categorical vector (any order is okay)
+day_vector &lt;- c(&#39;afternoon&#39;,&#39;night&#39;,&#39;morning&#39;)
+
+# Convert `day_vector` to a factor with ordered level
+# Order = TRUE indicates that it is ordinal
+# levels indicates the order. It is only required if the order = TRUE
+Factor_example &lt;- factor(day_vector, order = TRUE, levels =c(&#39;morning&#39;, &#39;afternoon&#39;,&#39;night&#39;))
+
+#Print the Factor example below.
+print(Factor_example)</code></pre>
+<pre><code>## [1] afternoon night     morning  
+## Levels: morning &lt; afternoon &lt; night</code></pre>
+<p><strong>To Do:</strong> Fill in the blanks to create a non-ordinal
+factor with three values.</p>
+<pre class="r"><code>My_Vector &lt;- c(9999)
+
+#My_Factor &lt;- factor(My_Vector, order = )</code></pre>
 <p>Checking variable type</p>
 <p>Base operators 1. Arithmetic 2. Math – min/max/sum 3. Equal or
 unequal 4. And vs Or 5. %in%</p>
@@ -580,6 +702,8 @@ Number_E &lt;- 9999</code></pre>
 <p>Indexing Sam - please find a way to use activity[1]. and assign to
 “Verb” for the activity.</p>
 <pre class="r"><code>Verb &lt;- Activity[1]</code></pre>
+<pre><code>## [1] &quot;The Best Halloween Party Ever&quot;</code></pre>
+<pre><code>## [1] &quot;Last night I went to the most 9999 Halloween party! The invitation was delivered by 9999 and it told me to go to the deep dark 9999. I 9999 the doorbell 9999.000000 times.My friend answered the door dressed up as 9999 and said &#39;9999!&#39; There were 9999.000000 different costumes, including 9999.000000 ghouls and 9999.000000 mummified 9999s. There were also delicious treats to eat like candy corn and 9999.000000 candy bars, but my favourite part of the party was the pumpkin carving and bobbing for 9999s. I can&#39;t wait until next Halloween!&#39;&quot;</code></pre>
 </div>
 </div>
 </div>

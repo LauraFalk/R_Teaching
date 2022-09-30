@@ -19,6 +19,11 @@ Hello! Welcome to Laura and Sam's R101 teaching sessions! Today we're going to g
 ## Projects vs Single Scripts
 
 ## RMD format
+```{r}
+# Sam, 
+#Can you briefly mention that symbols (# and <>) indicate output formatting. I think we can have a whole separate section on this, but I don't want people to be confused. OR, if you hate the idea, we can remove the formatting?
+```
+
 
 ## Installing packages
 
@@ -59,6 +64,8 @@ Bird data variable name:
 
 ### Variable practice
 To start, we'll assign some simple variables for the different types of data that R uses.
+<br/><br/>
+
 
 #### 1. Numeric data
 Variables can be assigned any number.
@@ -94,25 +101,32 @@ Decimal <-9999
 Notice that the value has changed in your environment. 
 
 
-**TO DO** What value would appear if we ran the first code again?
+**TO DO** What value would appear if we ran the first code (Decimal <- 7.5895892) again?
+
 Answer:
-*Hint: The value is always overwritten.*
+
+*Hint: The value is always overwritten by the last code block, regardless of order in script.*
+<br/><br/>
+
 
 #### 2. Integers
 Integers are a numeric value with no decimal points.
 
 A suffix of L indicates that the value is an integer.Example below.
 ```{r}
-# Integer assignment example
+# Assign an integer - example
 Integer <- 1L
 ```
 
 
 **TO Do** Assign your own integer
 ```{r}
+# Assign an integer
 My_Integer <- 9999
 ```
 *Tip: Integers have a numeric color when properly assigned*
+<br/><br/>
+
 
 #### 3. Character data
 Character data  can include words, sentences, filepaths, etc. It is stored and treated as a block of text.
@@ -131,9 +145,6 @@ Adjective <- '9999'
 
 # Assign your favorite animal
 Animal <- '9999'
-  
-# Assign a place
-Place <- '9999'
 
 # Assign a celebrity name
 Celebrity <- '9999'
@@ -162,6 +173,8 @@ Exclamation <- "9999"
 Activity <- "9999"
 ```
 *Hint: The quotation marks should be placed around the entire phrase*
+<br/><br/>
+
 
 #### 4. Complex
 Complex data handles imaginary numbers in R
@@ -170,25 +183,31 @@ Imaginary numbers are indicated with an i.
 
 **To Do** Replace this imaginary animal with an imaginary number such as 2i.
 ```{r}
-# Attribute the imaginary variable with 
+# Attribute Imaginary with a complex number. 
 Imaginary <- 'Unicorn'
 ```
 *Hint: Complex values do not require quotation marks, proper formatting will change the color to the numeric color*
+<br/><br/>
+
 
 #### 5. Logical/ Boolean
 Logical data is True or False.
 
 Example:
 ```{r}
+# Assign as a TRUE logical value.
 Logic_True <- TRUE
 ```
 Notice that the TRUE value is all caps and the color is the same as the complex and numeric variables.
 
 **To Do** Create a false variable
 ```{r}
+# Assign a false logical value
 Logic_False <- 9999
 ```
 *Tip: Autofill can be used. After typing "FAL" a dropdown will appear. Press down arrow and enter OR click to select*
+<br/><br/>
+
 
 #### 6. Raw
 Converts other data types to raw bytes. This is not a common type.
@@ -207,20 +226,31 @@ Raw_Int <- intToBits(7L)
 
 ### What are data structures?
 Data structures are storage components for holding multiple values.
+<br/><br/>
+
 
 #### 1. Vectors 
-A vector is a collection of data values, such as characters, logical, integer, or numeric.It can be treated like a single column on a table.
+A vector is a collection of data values, such as characters, logical, integer, or numeric. It can be treated like a single column on a table.
 
 Example. Here is a character vector. Use the notation c() (column) to create the collection of values.
 ```{r}
+# Create a character vector
 Character_Vector <- c('Snoopy', 'Charlie Brown', 'Linus')
 ```
-Notice the environment show characters [1:3] (count of data) then lists the values
+*Tip: Notice the environment show characters [1:3] (count of data) then lists the values*
 
 
-**To do** 
-Create a numeric vector
+**To do** Create an Atomic Vector, a vector that consists of one value, containing your favorite location. 
 ```{r}
+# Assign a place
+Place <- '9999'
+```
+*Hint: We made atomic vectors in the Variables section*
+
+
+**To do** Create a numeric vector
+```{r}
+# Create a numeric vector
 Number_Vector <- 9999
 ```
 *Hint: separate values with commas and use the c() notation*
@@ -230,40 +260,119 @@ Vectors can use a combination of data types.
 **To do**
 Create a vector with 3 components of different data types.
 ```{r}
+# Create a mixed vector
 Mixed_Vector <- 9999
 ```
-*Hint: Try character, integer, numeric, or logical*
+*Hint: Try a mix character, integer, numeric, or logical values*
 
 
 Data structures, including vectors, can also reference previously created variables by using their names.
 ```{r}
-My_List <- c(Animal, Celebrity, My_Integer)
+# Create a mixed vector of different data types
+My_Vector <- c(9999, 9999, 9999r)
 ```
 *Tip: Notice that this becomes a chr (character) list (shown in the environment). R will automatically determine an appropriate format unless otherwise specified by you*
+<br/><br/>
+
 
 #### 2. Lists
-```{r}
+A list is a collection of data values, such as characters, logical, integer, or numeric. 
+So why is this different than a vector?
 
+Lists are ordered, recursive (loopable) and multidimensional!
+(They are more complex so you can do more things!)
+
+
+Here is an example of a simple list
+```{r}
+# Create a short list
+List_Example<- list('test', 1, 2, 3)
 ```
+Notice that the list appears in the data section of the environment.
+
+
+Is it possible to create a list of other items?
+
+**TO DO:** Create a list of your vector (My_Vector), List Example(List_Example), and one other atomic vector you previously created.
+```{r}
+# Create a list of lists
+List_Of_Lists <- 9999
+```
+*Hint: Use the function list() to create a list*
+<br/><br/>
+
 
 #### 3. DataFrames
-```{r}
+A data frame is a two dimensional way to store data, similar to a sheet in Microsoft Excel or Google sheets. We can also think of it as two or more vectors.
 
+Example: Here is a simple dataframe created in R.
+```{r}
+# Create a vector for the first column
+Song <- c("Rings", "Birds", "Hens", "Doves", "Partridge in a Pear Tree")
+# Create a vector for the second column (same length)
+Count <- c(5,4,3,2,1)
+
+#Create the dataframe
+Example_Dataframe <- data.frame(Song,Count)
 ```
+*Tip: click on the data frame from the environment to open a new tab and view the sheet*
+*Tip: press the down arrow in the environment to see a summary of data frame contents*
+
+
+Please note. For most of SWNC work, we will be importing data frames (such as CSV files) rather than creating our own. This will be covered in another session.
+<br/><br/>
+
 
 #### 4. Matrices
-```{r}
+A matrix is a set of rows and columns which organizes values of the same data type.
 
+Mathmatical functions can be applied to matrices for complex analyses.
+Here is an example matrix created in R:
+```{r}
+# The matrix creation requires the values (1-9), number of rows and/or number of columns)
+Matrix_example <- matrix(c(1:9), nrow = 3, ncol = 3)
 ```
+*Tip: Click on the matrix example in the environment to open a new tab and view all data*
+<br/><br/>
+
 
 #### 5. Arrays
-```{r}
+Arrays are objects with two or more dimensions. Again, these are used for more complicated analyses in R. 
 
+Example, a three dimensional array can be thought of as three stacked matrices, which will have a number of columns, rows and height.
+```{r}
+# Create an example array
+Array_Example <- array(0, dim = c(2, 2, 3))
+# Show the array named "Array_Example" below the code block
+print(Array_Example)
 ```
+*Tip: The array is considered a "value" in the environment of Rstudio. You can easily view the array (or any other object) by using the print() function to show it below a code block. We will go into more detail of the print() function later.*
+<br/><br/>
+
 
 #### 6. Factors
-```{r}
+Factors are used to store categorical (grouped) data  in a way that can be used for calculations or other machine learning processes.
 
+Factors can be ordinal (they have a rank or values are ordered) or non-ordinal.
+Here is an example:
+```{r}
+# Create the categorical vector (any order is okay)
+day_vector <- c('afternoon','night','morning')
+
+# Convert `day_vector` to a factor with ordered level
+# Order = TRUE indicates that it is ordinal
+# levels indicates the order. It is only required if the order = TRUE
+Factor_example <- factor(day_vector, order = TRUE, levels =c('morning', 'afternoon','night'))
+
+#Print the Factor example below.
+print(Factor_example)
+```
+**To Do:** Fill in the blanks to create a non-ordinal factor with three values.
+```{r}
+# Create the vector
+My_Vector <- c(9999)
+
+#My_Factor <- factor(My_Vector, order = )
 ```
 
 
@@ -352,7 +461,7 @@ Verb <- Activity[1]
 
 
 
-```{r, include = FALSE}
+```{r, echo= FALSE}
 print('The Best Halloween Party Ever') 
 sprintf("Last night I went to the most %s Halloween party! The invitation was delivered by %s and it told me to go to the deep dark %s. I %s the doorbell %f times.My friend answered the door dressed up as %s and said '%s!' There were %f different costumes, including %f ghouls and %f mummified %ss. There were also delicious treats to eat like candy corn and %f candy bars, but my favourite part of the party was the pumpkin carving and bobbing for %ss. I can't wait until next Halloween!'", Adjective, Animal, Place, Verb, Number_A, Celebrity, Exclamation, Number_B, Number_C, Number_D,Thing, Number_E, Thing2)
 ```
