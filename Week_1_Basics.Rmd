@@ -1,33 +1,103 @@
 ---
 title: "Week_1_Basics"
-author: "Laura Palacios and Samantha Olivares-Mejia"
-learner:
-date: '2022-09-28'
+author: "Authors: Laura Palacios and Sam Olivares-Mejia Learner:" 
+date: "`r Sys.Date()`"
 output: html_document
 ---
-```{r setup, include=FALSE}
-library(knitr)
-opts_chunk$set(echo = TRUE)
-```
 
 # R101 - Week 1
 
-Hello! Welcome to Laura and Sam's R101 teaching sessions! Today we're going to go over some of the R basics.
+#### Hello! Welcome to Laura and Sam's R101 teaching sessions! Today we're going to go over some of the R basics.
 
 ## Navigating R studio
+You have most likely opened this file using RStudio, which is an interface that makes R more user-friendly. There are four main windows or 'panes' in RStudio. 
 
-## Projects vs Single Scripts
+**Source**: This is the panel where you will write/view your code. Some outputs like data sets may also appear as a tab here. 
 
-## RMD format
+**Console/Terminal**: The console will display the execution of the code in your Source. You can write code in this section as well, however it is best practice to write your code in the Source panel (in a Script or Rmd file) in order to save your progress. The Terminal allows you to access your system shell. We will only be using the Console today.
+
+**Environment/History**: The environment will show what data sets and objects/variables you have created, as well as some properties of those objects such as their type and dimensions. The History tab contains a history of all the commands you've executed in R. 
+
+**Files/Plots/Packages/Help/Viewer: This panel will show you the contents of the directories on your computer. The tabs will help you navigate and set the working directory, show any plots generated, show what packages are actively loaded, and display help files for R functions and packages. We will go over these in more detail later on. 
+
 ```{r}
-# Sam, 
-#Can you briefly mention that symbols (# and <>) indicate output formatting. I think we can have a whole separate section on this, but I don't want people to be confused. OR, if you hate the idea, we can remove the formatting?
+##INSERT IMAGE OF PANES HERE - source: galaxy training
 ```
 
+## Projects vs Single Scripts and R Markdowns
+A project is a collection of work organized in a folder. It allows you to keep all the files associated with a project together in one place, which makes it easier to import, export, and edit your files. To open or create a new project, navigate to 'File'>'Open Project' or 'New Project'. 
 
-## Installing packages
+Your project will typically include a mix of scripts and R markdown (Rmd) files. A script is a text file containing a set of commands and comments, it is the simplest version of a file that you can use in R. An Rmd file is a more stylized version of a script with formatted plain text and chunks of code that create a sophisticated output such as a PDF or HTML. You can work on scripts or Rmds independently instead of through a project, however if is best practice to create scripts/Rmd files within projects. 
 
-## Installing libraries
+*Note: You may have already noticed that we've been highlighting 'best practices'. This is because there are many ways to achieve the same goal in R, which makes it very easy to lose track of what you're doing and how you're doing it. In general best practices revolve around organization, documentation, and version control (saving your progress).* 
+
+## Rmd format
+Let's dive into some of the aspects of an Rmd file. There are certain formatting elements to keep in mind when writing code in an Rmd. As mentioned before, and Rmd can include plain text (narratives) like what you're reading right now.
+```{r}
+# It can also contain chunks of code like this. 
+```
+
+Text within a code chunk needs a # in front of the line in order to be read as a comment instead of code to be executed. A code chunk is usually starts with ```` ```{ }```` and ends with ```` ``` ```` on the last line. There are certain settings you can use to change what is shown in the Rmd output from the code chunk. For example, you can chose to only show the result of your code in the output and hide the code for each command executed. We'll play around with those elements later.
+
+In addition to code chunks, you can also have 'inline' R code which is embedded in the narratives of the documents using the syntax `` `r ` ``. 
+
+In the plain text, the formatting is slightly different. Instead of indicating the beginning of a comment, the # in the narrative creates a header. The number of # indicates how big the header is.
+<br/><br/>
+
+#### Here is an example header using four #s 
+Do you notice how small the header is compared to the others in this document which mainly use two #s?
+<br/><br/>
+We also just used `<br/><br/>` to add extra breaks between paragraphs. Like #s, the number of `<br/>` you use indicates the size, or number of  breaks between paragraphs. <p> We could also use `<p>` to start a new paragraph instead of starting a new line manually. 
+<br/><br/>
+
+
+### Text Formatting 
+  - Text surrounded by ** on both ends ie. `**text**` creates **bold text**. 
+  - Text surrounded by only one * on both ends ie. `*text*` creates *italicized text*. 
+  - Additionally, a url surrounded by `< >` creates a hyperlink. You can even change the display text of the link by using the following format: `[text to display](link url)` There are other formatting nuances that can be found on this [Rmarkdown cheat sheet](https://shiny.rstudio.com/articles/rn-cheatsheet.htmml)
+  - To create bullet points, we used two spaces followed by a `-`
+
+*Note: If you're reading this within RStudio, this section may be a bit confusing, because we've had to add additional syntax to display the examples properly in the output file. to get a clearer idea of these formatting details, read this document in its HTML format.* 
+<br/><br/>
+
+### Setting Parameters
+
+In addition to text format, there are a couple other elements of an Rmarkdown to highlight. At the beginning of the document, you may have noticed a title, author and date. These were set using output options which are defined at the beginning of the Rmd file along with the output file type. You can also set the theme of the markdown as well as other parameters, but we won't go into detail on those today. 
+
+```{r}
+##INSERT IMAGE OF PARAMETERS HERE 
+```
+You may notice the command `Sys.Date()` in the date parameter. This is an example of a function that executes a particular command. What does it do though? In order to look up help files for specific functions, go to the console in RStudio and enter `?Sys.Date()`. A help file will pop up in the 'Help' tab in the bottom right, which provides information on the function. Of note is the description, details, and examples. 
+
+**TO DO**: Go ahead and scroll to the top of the Rmd file in R studio and enter your name as the 'Learner'.
+
+## Installing packages loading libraries
+
+Now that we've learned about the basic format of our files, we have one more step before we can start executing commands. As we mentioned earlier, there are many ways to achieve the same goal in R. It is also an open source software, meaning that it is free for anyone to use and build upon. This means that there are extensions to the programming language in the form of packages. Kind of like an expansion pack with new characters in a board game, packages are full of new functions that perform different tasks. 
+
+### Necessary Functions
+
+A function in R is a statement that takes a parameter(argument) and executes a command(performs a particular task). Some functions are included as part of the R programming language (known as Base R), while others have to be installed and loaded into our "library". You can even create your own functions! 
+
+So how do we add packages to our library? There are two functions we use to do this: `install.packages()` and `library()`. Notice how there is nothing inside the parentheses. Unlike `Sys.Date()`, we need to input an argument inside the function for it to work, in this case the name of the package we want to load in. 
+
+There are several significant differences between the `install.packages()` and `library()` functions. The most important is that you only ever have to install a package once when using the same computer, but you will have to load the package into your library every time you open a new session in R. 
+
+### Running the Code
+Let's check if you have 'knitr' installed already. Run the code chunk below by clicking the green 'play' button on the upper right hand corner of the code chunk in Rstudio. 
+
+```{r}
+library(knitr) #load 'knitr package
+```
+
+If you got an error message, that means that you do not have 'knitr' installed already. Copy and paste `install.packages("knitr")` into the code chunk above and run it again to install the package. 
+
+*Note: the order functions are written in matters! If you put `library(knitr)` before `install.packages("knitr")`, you will get an error message. This is because the knitr package would not have existed yet. This is very important to keep in mind as we move forward and work with variables*
+
+When you are done installing knitr, make sure to delete the line of code you copy and pasted into the code chunk. Since we will eventually turn this document into an HTML file, the `install.packages()`function needs to be removed in order to properly render the file. Now that you've installed 'knitr' you will never have to run `install.packages("knitr")` again!
+
+### Checking our Work! 
+Now that we've loaded our packages and entered our name at the top of our document, let's see how our output has changed. To render the document into an HTML, click the 'Knit' button at the top of the source pane. After a moment the HTML document should replace the help file in the bottom right, this time in the Viewer tab. You should now see your name at the top of the document! 
 
 ## R Variables
 
@@ -269,7 +339,7 @@ Mixed_Vector <- 9999
 Data structures, including vectors, can also reference previously created variables by using their names.
 ```{r}
 # Create a mixed vector of different data types
-My_Vector <- c(9999, 9999, 9999r)
+My_Vector <- c(9999, 9999, 9999)
 ```
 *Tip: Notice that this becomes a chr (character) list (shown in the environment). R will automatically determine an appropriate format unless otherwise specified by you*
 <br/><br/>
@@ -411,7 +481,8 @@ Verb <- Activity[1]
 
 
 
-
+## Sources 
+"R Markdown Cookbook. A range if tips and tricks to make better use of R Markdown." Yihui Xie, Christophe Dervieux, Emily Riederer. 2022-09-09
 
 
 
