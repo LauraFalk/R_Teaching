@@ -18,9 +18,9 @@ You have most likely opened this file using RStudio, which is an interface that 
 
 **Source**: This is the panel where you will write/view your code. Some outputs like data sets may also appear as a tab here. 
 
-**Console/Terminal**: The console will display the execution of the code in your Source. You can write code in this section as well, however it is best practice to write your code in the Source panel (in a Script or Rmd file) in order to save your progress. The Terminal allows you to access your system shell. We will only be using the Console today.
+**Console/Terminal**: The console will display the execution of the code in your source. You can write code in this section as well, however it is best practice to write your code in the Source panel (in a Script or Rmd file) in order to save your progress. The Terminal allows you to access your system shell. We will only be using the console today.
 
-**Environment/History**: The environment will show what data sets and objects/variables you have created, as well as some properties of those objects such as their type and dimensions. The History tab contains a history of all the commands you've executed in R. 
+**Environment/History**: The environment will show what data sets and objects/variables you have created, as well as some properties of those objects such as their type and dimensions. The history tab contains a history of all the commands you've executed in R. 
 
 **Files/Plots/Packages/Help/Viewer**: This panel will show you the contents of the directories on your computer. The tabs will help you navigate and set the working directory, show any plots generated, show what packages are actively loaded, and display help files for R functions and packages. We will go over these in more detail later on. 
 
@@ -42,7 +42,7 @@ Let's dive into some of the aspects of an Rmd file. There are certain formatting
 # It can also contain chunks of code like this. 
 ```
 
-Text within a code chunk needs a # in front of the line in order to be read as a comment instead of code to be executed. A code chunk is usually starts with ```` ```{ }```` and ends with ```` ``` ```` on the last line. There are certain settings you can use to change what is shown in the Rmd output from the code chunk. For example, you can chose to only show the result of your code in the output and hide the code for each command executed. We'll play around with those elements later.
+Text within a code chunk needs a # in front of the line in order to be read as a comment instead of code to be executed. A code chunk usually starts with ```` ```{ }```` and ends with ```` ``` ```` on the last line. There are certain settings you can use to change what is shown in the Rmd output from the code chunk. For example, you can chose to only show the result of your code in the output and hide the code that executed that command. that's how I was able to insert the image in the previous section, without you seeing the code that did that.  
 
 In addition to code chunks, you can also have 'inline' R code which is embedded in the narratives of the documents using the syntax `` `r ` ``. 
 
@@ -59,10 +59,10 @@ We also just used `<br/><br/>` to add extra breaks between paragraphs. Like #s, 
 ### Text Formatting 
   - Text surrounded by ** on both ends ie. `**text**` creates **bold text**. 
   - Text surrounded by only one * on both ends ie. `*text*` creates *italicized text*. 
-  - Additionally, a url surrounded by `< >` creates a hyperlink. You can even change the display text of the link by using the following format: `[text to display](link url)` There are other formatting nuances that can be found on this [Rmarkdown cheat sheet](https://www.rstudio.com/blog/the-r-markdown-cheat-sheet/)
+  - Additionally, a url surrounded by `< >` creates a hyperlink. You can even change the display text of the link by using the following format: `[text to display](link url)` There are other formatting nuances and further detail on the other elements we covered that can be found on this [Rmarkdown cheat sheet](https://www.rstudio.com/blog/the-r-markdown-cheat-sheet/)
   - To create bullet points, we used two spaces followed by a `-`
 
-*Note: If you're reading this within RStudio, this section may be a bit confusing, because we've had to add additional syntax to display the examples properly in the output file. to get a clearer idea of these formatting details, read this document in its HTML format.* 
+*Note: If you're reading this within RStudio, this section may be a bit confusing, because we've had to add additional syntax to display the examples properly in the output file. To get a clearer idea of these formatting details, read this document in its HTML format.* 
 <br/><br/>
 
 ### Setting Parameters
@@ -96,14 +96,19 @@ Let's check if you have 'knitr' installed already. Run the code chunk below by c
 library(knitr) #load 'knitr package
 ```
 
-If you got an error message, that means that you do not have 'knitr' installed already. Copy and paste `install.packages("knitr")` into the code chunk above and run it again to install the package. 
+If you got an error message, that means that you do not have 'knitr' installed already. Copy and paste `install.packages("knitr")` into the code chunk (above `library(knitr)`  and run it again to install the package. 
 
-*Note: The order functions are written in matters! If you put `library(knitr)` before `install.packages("knitr")`, you will get an error message. This is because the knitr package would not have existed yet. The same goes for when you load packages into your library. You may have noticed that we already have `library(knitr)` at the beginning of the document. This is because the functions we used to insert the images into the Rmd earlier are from the knitr package.*
+*Note: The order functions are written in matters! If you put `install.packages("knitr")` after`library(knitr)`, you will get an error message. This is because code runs top to bottom, and the knitr package would not have existed yet. The same goes for when you load packages into your library. You may have noticed that we already have `library(knitr)` at the beginning of the document. This is because the functions we used to insert the images into the Rmd earlier are from the knitr package.*
 
 When you are done installing knitr, make sure to delete the line of code you copy and pasted into the code chunk. Since we will eventually turn this document into an HTML file, the `install.packages()`function needs to be removed in order to properly render the file. Now that you've installed 'knitr' you will never have to run `install.packages("knitr")` again!
 
-### Checking our Work! 
-Now that we've loaded our packages and entered our name at the top of our document, let's see how our output has changed. To render the document into an HTML, click the 'Knit' button at the top of the source pane. After a moment the HTML document should replace the help file in the bottom right, this time in the Viewer tab. You should now see your name at the top of the document! 
+### Checking our Work 
+Now that we've loaded our packages and entered our name at the top of our document, let's see how our output has changed. To render the document into an HTML, click the 'Knit' button at the top of the source pane. 
+```{r graphic3, echo=FALSE, fig.align='center'}
+include_graphics("knit.PNG")
+```
+
+After a moment the HTML document should replace the help file in the bottom right, this time in the Viewer tab. You should now see your name at the top of the document! 
 
 ## R Variables
 
