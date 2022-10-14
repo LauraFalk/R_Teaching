@@ -4,6 +4,10 @@ author: "Authors: Laura Palacios and Sam Olivares-Mejia Learner:"
 date: "`r Sys.Date()`"
 output: html_document
 ---
+```{r setup, include=FALSE}
+library(knitr) #load 'knitr package
+opts_chunk$set(echo = TRUE)
+```
 
 # R101 - Week 1
 
@@ -14,14 +18,14 @@ You have most likely opened this file using RStudio, which is an interface that 
 
 **Source**: This is the panel where you will write/view your code. Some outputs like data sets may also appear as a tab here. 
 
-**Console/Terminal**: The console will display the execution of the code in your Source. You can write code in this section as well, however it is best practice to write your code in the Source panel (in a Script or Rmd file) in order to save your progress. The Terminal allows you to access your system shell. We will only be using the Console today.
+**Console/Terminal**: The console will display the execution of the code in your source. You can write code in this section as well, however it is best practice to write your code in the Source panel (in a Script or Rmd file) in order to save your progress. The Terminal allows you to access your system shell. We will only be using the console today.
 
-**Environment/History**: The environment will show what data sets and objects/variables you have created, as well as some properties of those objects such as their type and dimensions. The History tab contains a history of all the commands you've executed in R. 
+**Environment/History**: The environment will show what data sets and objects/variables you have created, as well as some properties of those objects such as their type and dimensions. The history tab contains a history of all the commands you've executed in R. 
 
-**Files/Plots/Packages/Help/Viewer: This panel will show you the contents of the directories on your computer. The tabs will help you navigate and set the working directory, show any plots generated, show what packages are actively loaded, and display help files for R functions and packages. We will go over these in more detail later on. 
+**Files/Plots/Packages/Help/Viewer**: This panel will show you the contents of the directories on your computer. The tabs will help you navigate and set the working directory, show any plots generated, show what packages are actively loaded, and display help files for R functions and packages. We will go over these in more detail later on. 
 
-```{r}
-##INSERT IMAGE OF PANES HERE - source: galaxy training
+```{r graphic1, echo=FALSE, fig.align="center", out.height="65%", out.width="65%"}
+include_graphics("rstudio_session_4pane_layout.PNG")
 ```
 
 ## Projects vs Single Scripts and R Markdowns
@@ -33,11 +37,12 @@ Your project will typically include a mix of scripts and R markdown (Rmd) files.
 
 ## Rmd format
 Let's dive into some of the aspects of an Rmd file. There are certain formatting elements to keep in mind when writing code in an Rmd. As mentioned before, and Rmd can include plain text (narratives) like what you're reading right now.
+
 ```{r}
 # It can also contain chunks of code like this. 
 ```
 
-Text within a code chunk needs a # in front of the line in order to be read as a comment instead of code to be executed. A code chunk is usually starts with ```` ```{ }```` and ends with ```` ``` ```` on the last line. There are certain settings you can use to change what is shown in the Rmd output from the code chunk. For example, you can chose to only show the result of your code in the output and hide the code for each command executed. We'll play around with those elements later.
+Text within a code chunk needs a # in front of the line in order to be read as a comment instead of code to be executed. A code chunk usually starts with ```` ```{ }```` and ends with ```` ``` ```` on the last line. There are certain settings you can use to change what is shown in the Rmd output from the code chunk. For example, you can chose to only show the result of your code in the output and hide the code that executed that command. that's how I was able to insert the image in the previous section, without you seeing the code that did that.  
 
 In addition to code chunks, you can also have 'inline' R code which is embedded in the narratives of the documents using the syntax `` `r ` ``. 
 
@@ -54,32 +59,33 @@ We also just used `<br/><br/>` to add extra breaks between paragraphs. Like #s, 
 ### Text Formatting 
   - Text surrounded by ** on both ends ie. `**text**` creates **bold text**. 
   - Text surrounded by only one * on both ends ie. `*text*` creates *italicized text*. 
-  - Additionally, a url surrounded by `< >` creates a hyperlink. You can even change the display text of the link by using the following format: `[text to display](link url)` There are other formatting nuances that can be found on this [Rmarkdown cheat sheet](https://shiny.rstudio.com/articles/rn-cheatsheet.htmml)
+  - Additionally, a url surrounded by `< >` creates a hyperlink. You can even change the display text of the link by using the following format: `[text to display](link url)` There are other formatting nuances and further detail on the other elements we covered that can be found on this [Rmarkdown cheat sheet](https://www.rstudio.com/blog/the-r-markdown-cheat-sheet/)
   - To create bullet points, we used two spaces followed by a `-`
 
-*Note: If you're reading this within RStudio, this section may be a bit confusing, because we've had to add additional syntax to display the examples properly in the output file. to get a clearer idea of these formatting details, read this document in its HTML format.* 
+*Note: If you're reading this within RStudio, this section may be a bit confusing, because we've had to add additional syntax to display the examples properly in the output file. To get a clearer idea of these formatting details, read this document in its HTML format.* 
 <br/><br/>
 
 ### Setting Parameters
 
 In addition to text format, there are a couple other elements of an Rmarkdown to highlight. At the beginning of the document, you may have noticed a title, author and date. These were set using output options which are defined at the beginning of the Rmd file along with the output file type. You can also set the theme of the markdown as well as other parameters, but we won't go into detail on those today. 
 
-```{r}
-##INSERT IMAGE OF PARAMETERS HERE 
+```{r graphic2, echo=FALSE, fig.align="center"}
+include_graphics("r_header.PNG") 
 ```
-You may notice the command `Sys.Date()` in the date parameter. This is an example of a function that executes a particular command. What does it do though? In order to look up help files for specific functions, go to the console in RStudio and enter `?Sys.Date()`. A help file will pop up in the 'Help' tab in the bottom right, which provides information on the function. Of note is the description, details, and examples. 
+
+Let's take a closer look at `Sys.Date()` in the date parameter. This is an example of a function that executes a particular command. What does it do though? In order to look up help files for specific functions, go to the console in RStudio and enter `?Sys.Date()`. A help file will pop up in the 'Help' tab in the bottom right, which provides information on the function. Of note is the description, details, and examples. 
 
 **TO DO**: Go ahead and scroll to the top of the Rmd file in R studio and enter your name as the 'Learner'.
 
 ## Installing packages loading libraries
 
-Now that we've learned about the basic format of our files, we have one more step before we can start executing commands. As we mentioned earlier, there are many ways to achieve the same goal in R. It is also an open source software, meaning that it is free for anyone to use and build upon. This means that there are extensions to the programming language in the form of packages. Kind of like an expansion pack with new characters in a board game, packages are full of new functions that perform different tasks. 
+Now that we've learned about the basic format of our files, we have one more step before we can start executing commands. As we mentioned earlier, there are many ways to achieve the same goal in R. It is also an open source software, meaning that it is free for anyone to use and build upon. Because of this, there are extensions to the programming language in the form of packages. Kind of like an expansion pack with new characters in a board game, packages are full of new functions that perform different tasks. 
 
 ### Necessary Functions
 
 A function in R is a statement that takes a parameter(argument) and executes a command(performs a particular task). Some functions are included as part of the R programming language (known as Base R), while others have to be installed and loaded into our "library". You can even create your own functions! 
 
-So how do we add packages to our library? There are two functions we use to do this: `install.packages()` and `library()`. Notice how there is nothing inside the parentheses. Unlike `Sys.Date()`, we need to input an argument inside the function for it to work, in this case the name of the package we want to load in. 
+So how do we add packages to our library? There are two base functions we use to do this: `install.packages()` and `library()`. Notice how there is nothing inside the parentheses. Unlike `Sys.Date()`, we need to input an argument inside the function for it to work, in this case the name of the package we want to load in. 
 
 There are several significant differences between the `install.packages()` and `library()` functions. The most important is that you only ever have to install a package once when using the same computer, but you will have to load the package into your library every time you open a new session in R. 
 
@@ -90,14 +96,19 @@ Let's check if you have 'knitr' installed already. Run the code chunk below by c
 library(knitr) #load 'knitr package
 ```
 
-If you got an error message, that means that you do not have 'knitr' installed already. Copy and paste `install.packages("knitr")` into the code chunk above and run it again to install the package. 
+If you got an error message, that means that you do not have 'knitr' installed already. Copy and paste `install.packages("knitr")` into the code chunk (above `library(knitr)`  and run it again to install the package. 
 
-*Note: the order functions are written in matters! If you put `library(knitr)` before `install.packages("knitr")`, you will get an error message. This is because the knitr package would not have existed yet. This is very important to keep in mind as we move forward and work with variables*
+*Note: The order functions are written in matters! If you put `install.packages("knitr")` after`library(knitr)`, you will get an error message. This is because code runs top to bottom, and the knitr package would not have existed yet. The same goes for when you load packages into your library. You may have noticed that we already have `library(knitr)` at the beginning of the document. This is because the functions we used to insert the images into the Rmd earlier are from the knitr package.*
 
 When you are done installing knitr, make sure to delete the line of code you copy and pasted into the code chunk. Since we will eventually turn this document into an HTML file, the `install.packages()`function needs to be removed in order to properly render the file. Now that you've installed 'knitr' you will never have to run `install.packages("knitr")` again!
 
-### Checking our Work! 
-Now that we've loaded our packages and entered our name at the top of our document, let's see how our output has changed. To render the document into an HTML, click the 'Knit' button at the top of the source pane. After a moment the HTML document should replace the help file in the bottom right, this time in the Viewer tab. You should now see your name at the top of the document! 
+### Checking our Work 
+Now that we've loaded our packages and entered our name at the top of our document, let's see how our output has changed. To render the document into an HTML, click the 'Knit' button at the top of the source pane. 
+```{r graphic3, echo=FALSE, fig.align='center'}
+include_graphics("knit.PNG")
+```
+
+After a moment the HTML document should replace the help file in the bottom right, this time in the Viewer tab. You should now see your name at the top of the document! 
 
 ## R Variables
 
