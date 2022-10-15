@@ -18,11 +18,11 @@ You have most likely opened this file using RStudio, which is an interface that 
 
 **Source**: This is the panel where you will write/view your code. Some outputs like data sets may also appear as a tab here. 
 
-**Console/Terminal**: The console will display the execution of the code in your source. You can write code in this section as well, however it is best practice to write your code in the Source panel (in a Script or Rmd file) in order to save your progress. The Terminal allows you to access your system shell. We will only be using the console today.
+**Console/Terminal**: The console will display the execution of the code in your source. You can write code in this section as well, however it is best practice to write your code in the Source panel (in a Script or Rmd file) in order to save your progress. The terminal allows you to access your system shell. We will only be using the console today.
 
 **Environment/History**: The environment will show what data sets and objects/variables you have created, as well as some properties of those objects such as their type and dimensions. The history tab contains a history of all the commands you've executed in R. 
 
-**Files/Plots/Packages/Help/Viewer**: This panel will show you the contents of the directories on your computer. The tabs will help you navigate and set the working directory, show any plots generated, show what packages are actively loaded, and display help files for R functions and packages. We will go over these in more detail later on. 
+**Files/Plots/Packages/Help/Viewer**: This panel will show you the contents of the directories on your computer. The tabs will help you navigate and set the working directory, show any plots generated, show what packages are actively loaded, and display help files for R functions and packages. 
 
 ```{r graphic1, echo=FALSE, fig.align="center", out.height="65%", out.width="65%"}
 include_graphics("rstudio_session_4pane_layout.PNG")
@@ -130,11 +130,12 @@ How to assign a value:
 
 ### Variable names
 There are some rules to follow when assigning names. These include:
-  1. Easy to understand
-  2. No spaces or special characters.
-  3. Starts with a letter. 
-  4. Letter is is followed by any letter, number, underscore, or period.
-  5. No reserved words (reserved words are used in arguements and may cause computer confusion if used as a variable name)  Here is a list: https://rdrr.io/r/base/Reserved.html
+
+  - Easy to understand
+  - No spaces or special characters
+  - Starts with a letter
+  - Letter is is followed by any letter, number, underscore, or period
+  - No reserved words (reserved words are used in arguements and may cause computer confusion if used as a variable name)  Here is a list: https://rdrr.io/r/base/Reserved.html
   
 **TO DO** Write a possible name for a variable which contains bird data
 
@@ -313,7 +314,7 @@ Data structures are storage components for holding multiple values.
 #### 1. Vectors 
 A vector is a collection of data values, such as characters, logical, integer, or numeric. It can be treated like a single column on a table.
 
-Example. Here is a character vector. Use the notation c() (column) to create the collection of values.
+Example. Here is a character vector. Use the notation c() (concatenate) to create the collection of values.
 ```{r}
 # Create a character vector
 Character_Vector <- c('Snoopy', 'Charlie Brown', 'Linus')
@@ -460,29 +461,44 @@ My_Vector <- c(9999)
 
 Checking variable type
 
-Base operators
-1.	Arithmetic
-2.	Math – min/max/sum
-3.	Equal or unequal
-4.	And vs Or 
-5.	%in%
-
-Sam please find a way to attribute numbers A-E for the activity.
-```{r}
+## Base operators and functions
+Base R has some operators we can use to manipulate variables. Let's check them out 
+#### 1. Arithmetic
+Basic operators for arithmetic include +, -, *, and /, for addition, subtraction, multiplication, and division respectively. 
+**TO DO**: Assign the following variable to the sum of the numeric values of your birth day and birth month
+``` {r}
 Number_A <- 9999
-Number_B <- 9999
-Number_C <- 9999
-Number_D <- 9999
-Number_E <- 9999
 ```
+#### 2.	Comparing Numbers
+We can also use operators to compare two values to one another, asking whether the values are less than (<), greater than(>), less than or equal to(<=), greater than or equal to(>=), equal to(==), or not equal to (!=) one another. When executed, the expressions return either a TRUE or FALSE.
 
-Base Functions
+**TO DO**: Replace the '-' with one of the operators to make the following statements TRUE
+```{r}
+#make these statements TRUE
+105-66
+27-84 
+99-99
+3-42
+```
+#### 3.	Basic Statistics 
+R also has functions that can give you basic summary statistics (min, max, sum, mean, mode etc.) of a group of numbers. Let's use the Numeric_Vector your created earlier to show how you can find the sum of your values. 
+```{r}
+#Assign Number_B to the sum of the values in your vector
+Number_B <- sum(Number_Vector)
+```
+**TO DO** Find the min, max and mode of your vector 
+```{r}
+Number_C<- 9999
+Number_D<- 9999
+Number_E<- 9999
+```
+*Hint: use the same format as you did to find the sum of your values*
 
-Print
+#### 4.	And vs Or 
 
-Concatenate
+#### 5.	%in%
 
-Is.na()
+#### 6. Is.na()
 
 Indexing
 Sam - please find a way to use activity[1]. and assign to "Verb" for the activity.
@@ -490,7 +506,7 @@ Sam - please find a way to use activity[1]. and assign to "Verb" for the activit
 Verb <- Activity[1]
 ```
 
-
+Print
 
 ## Sources 
 "R Markdown Cookbook. A range if tips and tricks to make better use of R Markdown." Yihui Xie, Christophe Dervieux, Emily Riederer. 2022-09-09
