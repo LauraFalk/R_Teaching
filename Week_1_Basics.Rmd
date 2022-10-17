@@ -12,13 +12,31 @@ opts_chunk$set(echo = TRUE)
 # R101 - Week 1
 
 #### Hello! Welcome to Laura and Sam's R101 teaching sessions! Today we're going to go over some of the R basics.
+<br/>
 
-## Navigating R studio
+## Outline for Today: 
+
+####  A. Navigating RStudio
+  
+####  B. File Structures
+  
+####  C. Rmarkdown 
+  
+####  D. Installing Packages and Loading Libraries
+  
+####  E. Variables 
+  
+####  F. Data Structures
+  
+####  G. Base Operators and Functions
+<br/><br/>
+
+## A. Navigating RStudio
 You have most likely opened this file using RStudio, which is an interface that makes R more user-friendly. There are four main windows or 'panes' in RStudio. 
 
 **Source**: This is the panel where you will write/view your code. Some outputs like data sets may also appear as a tab here. 
 
-**Console/Terminal**: The console will display the execution of the code in your source. You can write code in this section as well, however it is best practice to write your code in the Source panel (in a Script or Rmd file) in order to save your progress. The terminal allows you to access your system shell. We will only be using the console today.
+**Console/Terminal**: The console will display the execution of the code in your source. You can write code in this section as well, however it is best practice to write your code in the source panel (in a Script or Rmd file) in order to save your progress. The terminal allows you to access your system shell. We will only be using the console today.
 
 **Environment/History**: The environment will show what data sets and objects/variables you have created, as well as some properties of those objects such as their type and dimensions. The history tab contains a history of all the commands you've executed in R. 
 
@@ -28,21 +46,26 @@ You have most likely opened this file using RStudio, which is an interface that 
 include_graphics("rstudio_session_4pane_layout.PNG")
 ```
 
-## Projects vs Single Scripts and R Markdowns
-A project is a collection of work organized in a folder. It allows you to keep all the files associated with a project together in one place, which makes it easier to import, export, and edit your files. To open or create a new project, navigate to 'File'>'Open Project' or 'New Project'. 
+## B. File Structures
+File structure is important when it comes to coding. Some file structures you can work out of in RStudio include **projects**, **scripts** and **Rmarkdowns**. A project is a collection of work organized in a folder. It allows you to keep all the files associated with a project together in one place, which makes it easier to import, export, and edit your files. To open or create a new project, navigate to 'File'>'Open Project' or 'New Project'. 
 
-Your project will typically include a mix of scripts and R markdown (Rmd) files. A script is a text file containing a set of commands and comments, it is the simplest version of a file that you can use in R. An Rmd file is a more stylized version of a script with formatted plain text and chunks of code that create a sophisticated output such as a PDF or HTML. You can work on scripts or Rmds independently instead of through a project, however if is best practice to create scripts/Rmd files within projects. 
+Your project will typically include a mix of scripts and R markdown (Rmd) files. 
+  - A script is a text file containing a set of commands and comments, it is the simplest version of a file that you can use in R. 
+  - An Rmd file is a more stylized version of a script with formatted plain text and chunks of code that create a sophisticated output such as a PDF or HTML. 
+You can work on scripts or Rmds independently instead of through a project, however if is best practice to create scripts/Rmd files within projects. 
 
 *Note: You may have already noticed that we've been highlighting 'best practices'. This is because there are many ways to achieve the same goal in R, which makes it very easy to lose track of what you're doing and how you're doing it. In general best practices revolve around organization, documentation, and version control (saving your progress).* 
 
-## Rmd format
-Let's dive into some of the aspects of an Rmd file. There are certain formatting elements to keep in mind when writing code in an Rmd. As mentioned before, and Rmd can include plain text (narratives) like what you're reading right now.
+## C. Rmarkdown
+Let's dive into some of the aspects of an Rmd file. There are certain formatting elements to keep in mind when writing code in an Rmd. As mentioned before, an Rmd can include plain text (narratives) like what you're reading right now.
 
 ```{r}
 # It can also contain chunks of code like this. 
 ```
 
-Text within a code chunk needs a # in front of the line in order to be read as a comment instead of code to be executed. A code chunk usually starts with ```` ```{ }```` and ends with ```` ``` ```` on the last line. There are certain settings you can use to change what is shown in the Rmd output from the code chunk. For example, you can chose to only show the result of your code in the output and hide the code that executed that command. that's how I was able to insert the image in the previous section, without you seeing the code that did that.  
+Text within a code chunk needs a # in front of the line in order to be read as a comment instead of code to be executed. *It is best practice to comment along as you're coding so that you can keep track of what you're doing.* 
+
+A code chunk usually starts with ```` ```{ }```` and ends with ```` ``` ```` on the last line. There are certain settings you can use to change what is shown in the Rmd output from the code chunk. For example, you can chose to only show the result of your code in the output and hide the code that executed that command. that's how I was able to insert the image in the previous section, without you seeing the code that did that.  
 
 In addition to code chunks, you can also have 'inline' R code which is embedded in the narratives of the documents using the syntax `` `r ` ``. 
 
@@ -75,9 +98,13 @@ include_graphics("r_header.PNG")
 
 Let's take a closer look at `Sys.Date()` in the date parameter. This is an example of a function that executes a particular command. What does it do though? In order to look up help files for specific functions, go to the console in RStudio and enter `?Sys.Date()`. A help file will pop up in the 'Help' tab in the bottom right, which provides information on the function. Of note is the description, details, and examples. 
 
+```{r graphic3, echo=FALSE, fig.align="center", out.height="70%", out.width="70%"}
+include_graphics("help_file.PNG") 
+```
+
 **TO DO**: Go ahead and scroll to the top of the Rmd file in R studio and enter your name as the 'Learner'.
 
-## Installing packages loading libraries
+## D. Installing Packages and Loading Libraries
 
 Now that we've learned about the basic format of our files, we have one more step before we can start executing commands. As we mentioned earlier, there are many ways to achieve the same goal in R. It is also an open source software, meaning that it is free for anyone to use and build upon. Because of this, there are extensions to the programming language in the form of packages. Kind of like an expansion pack with new characters in a board game, packages are full of new functions that perform different tasks. 
 
@@ -90,10 +117,11 @@ So how do we add packages to our library? There are two base functions we use to
 There are several significant differences between the `install.packages()` and `library()` functions. The most important is that you only ever have to install a package once when using the same computer, but you will have to load the package into your library every time you open a new session in R. 
 
 ### Running the Code
-Let's check if you have 'knitr' installed already. Run the code chunk below by clicking the green 'play' button on the upper right hand corner of the code chunk in Rstudio. 
+**TO DO**: Let's check if you have 'knitr' installed already. In RStudio, Run the code chunk below by clicking the green 'play' button on the upper right hand corner of the code chunk. 
 
 ```{r}
-library(knitr) #load 'knitr package
+#load 'knitr' package
+library(knitr) 
 ```
 
 If you got an error message, that means that you do not have 'knitr' installed already. Copy and paste `install.packages("knitr")` into the code chunk (above `library(knitr)`  and run it again to install the package. 
@@ -103,14 +131,15 @@ If you got an error message, that means that you do not have 'knitr' installed a
 When you are done installing knitr, make sure to delete the line of code you copy and pasted into the code chunk. Since we will eventually turn this document into an HTML file, the `install.packages()`function needs to be removed in order to properly render the file. Now that you've installed 'knitr' you will never have to run `install.packages("knitr")` again!
 
 ### Checking our Work 
-Now that we've loaded our packages and entered our name at the top of our document, let's see how our output has changed. To render the document into an HTML, click the 'Knit' button at the top of the source pane. 
-```{r graphic3, echo=FALSE, fig.align='center'}
+Now that we've loaded our packages and entered our name at the top of our document, let's see how our output has changed. 
+**TO DO**:To render the document into an HTML, click the 'Knit' button at the top of the source pane. 
+```{r graphic4, echo=FALSE, fig.align='center'}
 include_graphics("knit.PNG")
 ```
 
 After a moment the HTML document should replace the help file in the bottom right, this time in the Viewer tab. You should now see your name at the top of the document! 
 
-## R Variables
+## E. Variables
 
 ### What is an R variable?
 A variable is a way to store a piece of information. It can later be used to reference or manipulate.
@@ -201,7 +230,7 @@ Integer <- 1L
 ```
 
 
-**TO Do** Assign your own integer
+**TO DO** Assign your own integer
 ```{r}
 # Assign an integer
 My_Integer <- 9999
@@ -263,7 +292,7 @@ Complex data handles imaginary numbers in R
 
 Imaginary numbers are indicated with an i.
 
-**To Do** Replace this imaginary animal with an imaginary number such as 2i.
+**TO DO** Replace this imaginary animal with an imaginary number such as 2i.
 ```{r}
 # Attribute Imaginary with a complex number. 
 Imaginary <- 'Unicorn'
@@ -282,7 +311,7 @@ Logic_True <- TRUE
 ```
 Notice that the TRUE value is all caps and the color is the same as the complex and numeric variables.
 
-**To Do** Create a false variable
+**TO DO** Create a false variable
 ```{r}
 # Assign a false logical value
 Logic_False <- 9999
@@ -304,7 +333,7 @@ Raw_Int <- intToBits(7L)
 ```
 
 
-## R Data Structures
+## F. Data Structures
 
 ### What are data structures?
 Data structures are storage components for holding multiple values.
@@ -322,7 +351,7 @@ Character_Vector <- c('Snoopy', 'Charlie Brown', 'Linus')
 *Tip: Notice the environment show characters [1:3] (count of data) then lists the values*
 
 
-**To do** Create an Atomic Vector, a vector that consists of one value, containing your favorite location. 
+**TO DO** Create an Atomic Vector, a vector that consists of one value, containing your favorite location. 
 ```{r}
 # Assign a place
 Place <- '9999'
@@ -330,7 +359,7 @@ Place <- '9999'
 *Hint: We made atomic vectors in the Variables section*
 
 
-**To do** Create a numeric vector
+**TO DO** Create a numeric vector
 ```{r}
 # Create a numeric vector
 Number_Vector <- 9999
@@ -449,7 +478,7 @@ Factor_example <- factor(day_vector, order = TRUE, levels =c('morning', 'afterno
 #Print the Factor example below.
 print(Factor_example)
 ```
-**To Do:** Fill in the blanks to create a non-ordinal factor with three values.
+**TO DO:** Fill in the blanks to create a non-ordinal factor with three values.
 ```{r}
 # Create the vector
 My_Vector <- c(9999)
@@ -457,56 +486,203 @@ My_Vector <- c(9999)
 #My_Factor <- factor(My_Vector, order = )
 ```
 
+#### 7. Checking variable type
 
+## G. Base Operators and Functions
+Base R has some operators we can use to manipulate variables. We've already been using **assignment operators** which are used to assign values to vectors (ie. `<-`, `=`)  
 
-Checking variable type
-
-## Base operators and functions
-Base R has some operators we can use to manipulate variables. Let's check them out 
-#### 1. Arithmetic
+#### 1. Arithmetic Operators
 Basic operators for arithmetic include +, -, *, and /, for addition, subtraction, multiplication, and division respectively. 
+
 **TO DO**: Assign the following variable to the sum of the numeric values of your birth day and birth month
 ``` {r}
 Number_A <- 9999
 ```
-#### 2.	Comparing Numbers
+#### 2.	Relational Operators
 We can also use operators to compare two values to one another, asking whether the values are less than (<), greater than(>), less than or equal to(<=), greater than or equal to(>=), equal to(==), or not equal to (!=) one another. When executed, the expressions return either a TRUE or FALSE.
 
 **TO DO**: Replace the '-' with one of the operators to make the following statements TRUE
-```{r}
+```{r, eval=FALSE}
 #make these statements TRUE
 105-66
 27-84 
 99-99
 3-42
 ```
-#### 3.	Basic Statistics 
+#### 3.	Basic Statistics Functions
 R also has functions that can give you basic summary statistics (min, max, sum, mean, mode etc.) of a group of numbers. Let's use the Numeric_Vector your created earlier to show how you can find the sum of your values. 
 ```{r}
 #Assign Number_B to the sum of the values in your vector
 Number_B <- sum(Number_Vector)
 ```
-**TO DO** Find the min, max and mode of your vector 
+**TO DO:** Find the min, max, and mode of your vector 
 ```{r}
+#min
 Number_C<- 9999
+#max
 Number_D<- 9999
+#mode
 Number_E<- 9999
 ```
 *Hint: use the same format as you did to find the sum of your values*
 
-#### 4.	And vs Or 
+There is also a function that lets us check if there is an `NA` in our data: `is.na()` 
 
-#### 5.	%in%
-
-#### 6. Is.na()
-
-Indexing
-Sam - please find a way to use activity[1]. and assign to "Verb" for the activity.
+Example: 
 ```{r}
-Verb <- Activity[1]
+#set variable to be NA 
+na_example<- NA
+#check if your data is an NA value 
+is.na(na_example)
+```
+It might seem silly to have this function when we already know that na_example is an `NA`. However, when we have large sets of data, the function comes in handy. 
+
+Example: 
+```{r}
+#create bad_data vector
+bad_data<- c(3,4,NA,10,15,20,24,NA,40, 46)
+#check what values are NA in bad_data
+is.na(bad_data)
+```
+#### 4. Indexing 
+In the previous section, we found out that the 3rd and 8th value of bad_data are `NA` values. We can confirm this using indexing `[]`
+
+Example: 
+```{r}
+# use indexing to give us the 3rd value of bad_data
+bad_data[3]
+# use indexing to give us the 8th value of bad_data
+bad_data[8]
+# use indexing and c() to give us the 3rd and 8th value of bad_data 
+bad_data[c(3,8)]
+```
+Indexing can be used for any data type, whether the data is a vector of characters or a matrix of numeric values. With a matrix, you will need to also specify the column since there are two dimensions instead of just one. We'll use `Character_Vector` and `Example_Dataframe` that we created earlier.
+Example:
+```{r}
+#return the second value in Character_Vector
+Character_Vector[2]
+#return the value in the 4th row 1st column from Example_Dataframe 
+Example_Dataframe[4,1]
+```
+To index a string, use we can use the `substr()` function. This requires you to specify at what character to start and stop at. Lets try it out with our `Magical_Phrase`; 'Hello World'
+
+Example: 
+```{r}
+# Extract `Hello` from our Magical_Phrase 
+first_word<-substr(Magical_Phrase,1,5)
+#return first word
+first_word
+```
+**TO DO**: Extract the verb from your `Activity` string using the `substr()` function
+```{r}
+# Extract your verb 
+Verb<- 9999
 ```
 
-Print
+Back to our bad_data, we can  use indexing to remove the NA values from our  now that we know what position they are in (3 and 8)
+
+Example: 
+```{r}
+#remove the 3rd and 8th value from bad_data and assign as good_data
+good_data<-bad_data[c(1,2,4,5,6,7,9,10)]
+#return good_data
+good_data
+```
+A less time consuming way would be to use our `is.na()` function and 'not' relational operator `!` to do that work for us. 
+
+Example: 
+```{r}
+#assign good_data to bad_data that are not NA valuesusing is.na and ! operator
+better_data <-bad_data[!is.na(bad_data)]
+#return better_data
+better_data 
+```
+Nice!! that was a taste of data wrangling which we'll cover more next time! 
+
+#### 5.	Miscillaneous Operators 
+The `:` operator creates a series of numbers in sequence for a vector. In our indexing example, we had to type out all the numbers except for 3 and 8. Using the `:` operator is another way to make this a lot easier for us. 
+
+Example:
+```{r}
+#use the colon operator and indexing to remove NAs from bad_data
+easier_data<-bad_data[c(1:2,4:7,9:10)]
+#return easier_data
+easier_data
+```
+For that example, it didn't make too much of a difference, but it can help a lot with large ranges of numbers. 
+
+Example: 
+```{r}
+#create a large_data vector as all numbers from 1 to 100
+large_data<- 1:100
+#return large_data
+large_data
+```
+The `%in%` operator lets us check if a value is within a set of values. For example, let's check if your `Number_Vector` from earlier contains the number 59.
+
+**TO DO**: Run the code below 
+```{r, eval=FALSE}
+#check if 59 is in your Number_Vector
+59 %in% Number_Vector
+```
+Most likely you got `FALSE` when you executed the code. If your Number_Vector had 59 in it the expression would have returned `TRUE`.
+
+#### 5.	Logical Operators   
+We can expand our previous statement by checking if 59 is in multiple vectors by using the AND (`&`) and OR (`|`) operators. As the names suggest, AND requires both conditions to be true, whilst OR requires at least one of the conditions to be true. 
+
+**TO DO**: Run the code below 
+```{r, eval=FALSE}
+# check if 59 is in both vectors
+(59 %in% Number_Vector & 59 %in% 55:60)
+# check if 59 is in at least one of the vectors
+(59 %in% Number_Vector | 59 %in% 55:60)
+```
+Even though the second vector contains 59, only the second statement is `TRUE` because the AND statement requires 59 to be in both the `Number_Vector` and `c(59,58,57)`.
+
+#### 6. Conditional Statements 
+Conditional statements allow you to take action based on a specific criteria, the most basic of which is an **if** statement. In this case, if the condition is met (the statement is TRUE), the code will run, otherwise it will not run. For this example we are going to add in a `print()` statement which returns a string of characters and requires the statement to be surrounded by quotation marks `""`. 
+
+**TO DO**: Run the code below 
+```{r, eval=FALSE}
+# if 59 is in both vectors, print "yes, 59 is in both vectors"
+if (59 %in% Number_Vector & 59 %in% 55:60){
+  print("yes, 59 is in both vectors")
+}
+```
+
+Unless your `Number_Vector` contains 59, nothing happened when you ran the code. Although this still tells us that 59 isn't in both vectors, it would be nice to have the code tell us why this is the case. An **if-else** statement expands on our original code; if the statement is `TRUE` the code will run, and if `FALSE` (else), a different chunk of code will run. Let's see how this works.
+
+**TO DO**: Run the code below 
+```{r, eval=FALSE}
+# if 59 is in both vectors, print "yes, 59 is in both vectors", otherwise print "no, 59 is not in both vectors"
+if (59 %in% Number_Vector & 59 %in% 55:60){
+  print("yes, 59 is in both vectors")
+} else{
+  print ("no, 59 is not in both vectors")
+}
+```
+
+There are several things to note about the syntax (format) of the if-else statement
+
+  - the condition goes inside parentheses `()`
+  - the code to execute goes inside curly brackets `{}`
+  - the `else` statement goes on the same line as the closing curly bracket 
+  
+*Note: As a best practice, the curly brackets get their own line, this helps you keep track of whether or not you've 'closed' the expression. When you only have one expression, it doesn't make much of a difference, but if you have multiple nested conditions, the seemingly 'stylistic' choice comes in handy.*
+
+#### 7. Test your knowledge:
+
+**TO DO**: write an if-else statement to check if the sum of your `Number_Vector` is less than 12 or greater than 59. You can choose what to write for the print statement in both cases. 
+```{r}
+#write an if-else statement using the operators and functions you learned from this section
+```
+*Hint: Make sure to follow the same structure and use the operators outlined earlier. You'll need...*
+
+  - *a conditional statement* 
+  - *a basic statistics function*
+  - *some relational operators*
+  - *a logical operator* 
+  - *some print statements*
 
 ## Sources 
 "R Markdown Cookbook. A range if tips and tricks to make better use of R Markdown." Yihui Xie, Christophe Dervieux, Emily Riederer. 2022-09-09
@@ -559,7 +735,7 @@ Print
 
 
 
-```{r, echo= FALSE}
+```{r, include=FALSE}
 print('The Best Halloween Party Ever') 
 sprintf("Last night I went to the most %s Halloween party! The invitation was delivered by %s and it told me to go to the deep dark %s. I %s the doorbell %f times.My friend answered the door dressed up as %s and said '%s!' There were %f different costumes, including %f ghouls and %f mummified %ss. There were also delicious treats to eat like candy corn and %f candy bars, but my favourite part of the party was the pumpkin carving and bobbing for %ss. I can't wait until next Halloween!'", Adjective, Animal, Place, Verb, Number_A, Celebrity, Exclamation, Number_B, Number_C, Number_D,Thing, Number_E, Thing2)
 ```
