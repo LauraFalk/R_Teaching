@@ -32,10 +32,10 @@ opts_chunk$set(echo = TRUE)
   
 ####  7. Base Operators and Functions
 
-### Some Things Before we Get Started: 
+### Some things before we get started: 
 
 #### R has a steep learning curve 
-  - Like learning any other language (program or spoken) R can be tough to understand at first. That's ok! The foundation might be a bit frustrating, but it's this way for everyone. We'll take it slow at first, and always feel free to interrupt us for questions or clarifications 
+  - Like learning any other language (program or spoken) R can be tough to understand at first. That's ok! The foundation might be a bit frustrating, but it's this way for everyone. We'll take it slow at first, and always feel free to interrupt us for questions or clarifications. 
   
 #### Mistakes are a part of the process 
   - Coding has very specific syntax (formatting) that needs to be followed for it to work, therefore typos and errors that 'break' the code will happen, and its ok for your code to not run perfectly on the first try. Like a puzzle, you might get stuck, but there are also many different ways to find a solution to a problem. 
@@ -72,8 +72,10 @@ include_graphics("rstudio_session_4pane_layout.PNG")
 File structure is important when it comes to coding. Some file structures you can work out of in RStudio include **projects**, **scripts** and **Rmarkdowns**. A project is a collection of work organized in a folder. It allows you to keep all the files associated with a project together in one place, which makes it easier to import, export, and edit your files. To open or create a new project, navigate to 'File'>'Open Project' or 'New Project'. 
 
 Your project will typically include a mix of scripts and R markdown (Rmd) files. 
+
   - A script is a text file containing a set of commands and comments, it is the simplest version of a file that you can use in R. 
   - An Rmd file is a more stylized version of a script with formatted plain text and chunks of code that create a sophisticated output such as a PDF or HTML. 
+  
 You can work on scripts or Rmds independently instead of through a project, however if is best practice to create scripts/Rmd files within projects. 
 
 *Note: You may have already noticed that we've been highlighting 'best practices'. This is because there are many ways to achieve the same goal in R, which makes it very easy to lose track of what you're doing and how you're doing it. In general best practices revolve around organization, documentation, and version control (saving your progress).* 
@@ -154,6 +156,7 @@ When you are done installing knitr, make sure to delete the line of code you cop
 
 ### Checking our Work 
 Now that we've loaded our packages and entered our name at the top of our document, let's see how our output has changed. 
+
 **TO DO**:To render the document into an HTML, click the 'Knit' button at the top of the source pane. 
 ```{r graphic4, echo=FALSE, fig.align='center'}
 include_graphics("knit.PNG")
@@ -707,8 +710,10 @@ There are several things to note about the syntax (format) of the if-else statem
   - *some print statements*
 
 ## (Re)Sources 
-"R Markdown Cookbook. A range if tips and tricks to make better use of R Markdown." Yihui Xie, Christophe Dervieux, Emily Riederer. 2022-09-09
-
+  - [Kate Miller's Intro to R IMD Training](https://github.com/KateMMiller/IMD_R_Training_Intro/blob/master/IMD_D1_M1_Intro_to_R_tab.Rmd)
+  - "[R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)" Yihui Xie, Christophe Dervieux, Emily Riederer. 2022-09-09
+  - [R Markdown:the Definitive Guide](https://bookdown.org/yihui/rmarkdown/) Yihui Xie, J.J. Allaire, Garret Grolemund. 2022-04-11 
+  - [Rmarkdown cheat sheet](https://www.rstudio.com/blog/the-r-markdown-cheat-sheet/)
 
 
 ```{r, include = FALSE}
@@ -757,8 +762,45 @@ There are several things to note about the syntax (format) of the if-else statem
 
 
 ## Extra
-```{r, include=FALSE}
-print('The Best Halloween Party Ever') 
+This section is meant to be blank and will make sense after the training session. 
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+Why did you keep scrolling? 
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+Stop it!
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+
+You made it to the surprise! We put together a Mad Libs using the Variables YOU created during this training session. 
+
+Presenting.... "The Best Halloween Party Ever"
+```{r, echo=FALSE}
 sprintf("Last night I went to the most %s Halloween party! The invitation was delivered by %s and it told me to go to the deep dark %s. I %s the doorbell %f times.My friend answered the door dressed up as %s and said '%s!' There were %f different costumes, including %f ghouls and %f mummified %ss. There were also delicious treats to eat like candy corn and %f candy bars, but my favourite part of the party was the pumpkin carving and bobbing for %ss. I can't wait until next Halloween!'", Adjective, Animal, Place, Verb, Number_A, Celebrity, Exclamation, Number_B, Number_C, Number_D,Thing, Number_E, Thing2)
 ```
+
+Pretty cool huh? 
+
+
+RStudio is neat in that it will store all the variables you've created throughout your session in your environment. However, this also means that you need to clear your environment whenever you open a new project in case the same variable names are used. This is why specific and clear naming conventions are important!
+
+Even better, there's a function that will clear your environment for you: `rm(list=ls())`. Run it in your console after an R session and you're all set! 
+
+If you forget to do this no worry, when you close the Rstudio window you'll get a pop up asking you if you'd like to save your work space. Just click "Don't Save" and you'll be good to go :)
+
 # {-}
