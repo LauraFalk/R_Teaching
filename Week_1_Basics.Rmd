@@ -9,29 +9,51 @@ library(knitr) #load 'knitr package
 opts_chunk$set(echo = TRUE)
 ```
 
-# R101 - Week 1
+# R101 - Week 1 {.tabset .tabset-pills}
 
-#### Hello! Welcome to Laura and Sam's R101 teaching sessions! Today we're going to go over some of the R basics.
-<br/>
+## Outline
 
-## Outline for Today: 
+#### Hello! Welcome to Laura and Sam's R101 teaching sessions! Today we're going to go over some of the R basics. Today's session is meant to be an introduction for those new to R, or a refresher for those who haven't coded in a while. 
 
-####  A. Navigating RStudio
-  
-####  B. File Structures
-  
-####  C. Rmarkdown 
-  
-####  D. Installing Packages and Loading Libraries
-  
-####  E. Variables 
-  
-####  F. Data Structures
-  
-####  G. Base Operators and Functions
-<br/><br/>
 
-## A. Navigating RStudio
+### Outline for Today: 
+
+####  1. Navigating RStudio
+  
+####  2. File Structures
+  
+####  3. Rmarkdown 
+  
+####  4. Installing Packages and Loading Libraries
+  
+####  5. Variables 
+  
+####  6. Data Structures
+  
+####  7. Base Operators and Functions
+
+### Some Things Before we Get Started: 
+
+#### R has a steep learning curve 
+  - Like learning any other language (program or spoken) R can be tough to understand at first. That's ok! The foundation might be a bit frustrating, but it's this way for everyone. We'll take it slow at first, and always feel free to interrupt us for questions or clarifications 
+  
+#### Mistakes are a part of the process 
+  - Coding has very specific syntax (formatting) that needs to be followed for it to work, therefore typos and errors that 'break' the code will happen, and its ok for your code to not run perfectly on the first try. Like a puzzle, you might get stuck, but there are also many different ways to find a solution to a problem. 
+  
+#### There are lots of resources available 
+  - R is an open source programming language, which means that its free for anyone to use and build upon. This also means there are A LOT of online resources to help you out along the way. 
+  - There's a saying in the coding community that goes: "Good coders write good code; great coders steal great code." As long as you cite your sources and spend time understanding the code, don't spend more time than you have to writing code that already exists elsewhere. For example, this section of the R training is adapted from [Kate Miller's Intro to R IMD Training](https://github.com/KateMMiller/IMD_R_Training_Intro/blob/master/IMD_D1_M1_Intro_to_R_tab.Rmd). Check out the (Re)Sources tab for citations and more handy links! 
+  - Google and Stack Overflow are your friends !! Many answers to common questions can be found by looking there. 
+ 
+#### Why R?
+You might be wondering, why bother to learn R at all?? 
+
+  - R is one of the leading programming languages for statistics and data visualization, especially in the ecological community. 
+  - R is great for data exploration and producing plots and tables ready for publication.
+  - Because it's open source, people are adding onto R all the time, so it's continuously getting better.
+  - As mentioned before, there are many resources available for beginner and more experienced users alike to be able to hone their skills.  
+  
+## Navigating RStudio
 You have most likely opened this file using RStudio, which is an interface that makes R more user-friendly. There are four main windows or 'panes' in RStudio. 
 
 **Source**: This is the panel where you will write/view your code. Some outputs like data sets may also appear as a tab here. 
@@ -46,7 +68,7 @@ You have most likely opened this file using RStudio, which is an interface that 
 include_graphics("rstudio_session_4pane_layout.PNG")
 ```
 
-## B. File Structures
+## File Structures
 File structure is important when it comes to coding. Some file structures you can work out of in RStudio include **projects**, **scripts** and **Rmarkdowns**. A project is a collection of work organized in a folder. It allows you to keep all the files associated with a project together in one place, which makes it easier to import, export, and edit your files. To open or create a new project, navigate to 'File'>'Open Project' or 'New Project'. 
 
 Your project will typically include a mix of scripts and R markdown (Rmd) files. 
@@ -56,7 +78,7 @@ You can work on scripts or Rmds independently instead of through a project, howe
 
 *Note: You may have already noticed that we've been highlighting 'best practices'. This is because there are many ways to achieve the same goal in R, which makes it very easy to lose track of what you're doing and how you're doing it. In general best practices revolve around organization, documentation, and version control (saving your progress).* 
 
-## C. Rmarkdown
+## Rmarkdown
 Let's dive into some of the aspects of an Rmd file. There are certain formatting elements to keep in mind when writing code in an Rmd. As mentioned before, an Rmd can include plain text (narratives) like what you're reading right now.
 
 ```{r}
@@ -104,9 +126,9 @@ include_graphics("help_file.PNG")
 
 **TO DO**: Go ahead and scroll to the top of the Rmd file in R studio and enter your name as the 'Learner'.
 
-## D. Installing Packages and Loading Libraries
+## Installing Packages and Loading Libraries
 
-Now that we've learned about the basic format of our files, we have one more step before we can start executing commands. As we mentioned earlier, there are many ways to achieve the same goal in R. It is also an open source software, meaning that it is free for anyone to use and build upon. Because of this, there are extensions to the programming language in the form of packages. Kind of like an expansion pack with new characters in a board game, packages are full of new functions that perform different tasks. 
+Now that we've learned about the basic format of our files, we have one more step before we can start executing commands. As we mentioned earlier R is open source, and there are many ways to achieve the same goal in R. Because of this, there are extensions to the programming language in the form of packages. Kind of like an expansion pack with new characters in a board game, packages are full of new functions that perform different tasks. 
 
 ### Necessary Functions
 
@@ -139,7 +161,7 @@ include_graphics("knit.PNG")
 
 After a moment the HTML document should replace the help file in the bottom right, this time in the Viewer tab. You should now see your name at the top of the document! 
 
-## E. Variables
+## Variables
 
 ### What is an R variable?
 A variable is a way to store a piece of information. It can later be used to reference or manipulate.
@@ -333,7 +355,7 @@ Raw_Int <- intToBits(7L)
 ```
 
 
-## F. Data Structures
+## Data Structures
 
 ### What are data structures?
 Data structures are storage components for holding multiple values.
@@ -488,7 +510,7 @@ My_Vector <- c(9999)
 
 #### 7. Checking variable type
 
-## G. Base Operators and Functions
+## Base Operators and Functions
 Base R has some operators we can use to manipulate variables. We've already been using **assignment operators** which are used to assign values to vectors (ie. `<-`, `=`)  
 
 #### 1. Arithmetic Operators
@@ -684,7 +706,7 @@ There are several things to note about the syntax (format) of the if-else statem
   - *a logical operator* 
   - *some print statements*
 
-## Sources 
+## (Re)Sources 
 "R Markdown Cookbook. A range if tips and tricks to make better use of R Markdown." Yihui Xie, Christophe Dervieux, Emily Riederer. 2022-09-09
 
 
@@ -734,9 +756,9 @@ There are several things to note about the syntax (format) of the if-else statem
 
 
 
-
+## Extra
 ```{r, include=FALSE}
 print('The Best Halloween Party Ever') 
 sprintf("Last night I went to the most %s Halloween party! The invitation was delivered by %s and it told me to go to the deep dark %s. I %s the doorbell %f times.My friend answered the door dressed up as %s and said '%s!' There were %f different costumes, including %f ghouls and %f mummified %ss. There were also delicious treats to eat like candy corn and %f candy bars, but my favourite part of the party was the pumpkin carving and bobbing for %ss. I can't wait until next Halloween!'", Adjective, Animal, Place, Verb, Number_A, Celebrity, Exclamation, Number_B, Number_C, Number_D,Thing, Number_E, Thing2)
 ```
- 
+# {-}
