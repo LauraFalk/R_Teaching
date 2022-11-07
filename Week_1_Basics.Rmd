@@ -81,13 +81,13 @@ Your project will typically include a mix of scripts and Rmarkdown files. Today 
   - A script is a text file containing a set of commands and comments, it is the simplest version of a file that you can use in R. 
   - An Rmd file is a more stylized version of a script with formatted plain text and chunks of code that create a sophisticated output such as a PDF or HTML. 
   
-Below is an example of how scripts, markdown files, and projects will look like in both your file explorer, and in RStudio when opened. 
+Below is an example of how scripts, markdown files, and projects will look like in both your file explorer, and in RStudio. 
 
 ```{r graphic2, echo=FALSE, fig.align="center", out.height="65%", out.width="65%"}
 include_graphics("file_structure_explorer.PNG")
 ```
 
-```{r graphic3, echo=FALSE, fig.align="center", out.height="75%", out.width="75%"}
+```{r graphic3, echo=FALSE, fig.align="center", out.height="60%", out.width="60%"}
 include_graphics("file_structure_rstudio.PNG")
 ```
 
@@ -539,6 +539,25 @@ My_Vector <- c(9999)
 ```
 
 #### 7. Checking variable type
+If you're unsure of the type of variable an object is, there are several functions to help you out. The simplest function is `typeof()` 
+
+Example:
+```{r}
+#check data type and class type of Matrix_Example
+typeof(List_Example)
+```
+
+There are also more specific functions that you can use to determine if a variable is a certain type. 
+
+Example:
+```{r}
+#check data type and class type of Matrix_Example
+is.numeric(Number_Vector)
+is.numeric("blue")
+is.matrix(Matrix_example)
+is.character(5)
+```
+Notice how these functions return TRUE or FALSE.
 
 ## Base Operators and Functions
 
@@ -744,6 +763,7 @@ There are several things to note about the syntax (format) of the if-else statem
   - [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/) Yihui Xie, Christophe Dervieux, Emily Riederer. 2022-09-09
   - [R Markdown:the Definitive Guide](https://bookdown.org/yihui/rmarkdown/) Yihui Xie, J.J. Allaire, Garret Grolemund. 2022-04-11 
   - [Rmarkdown cheat sheet](https://www.rstudio.com/blog/the-r-markdown-cheat-sheet/)
+  - [Reserverd Words in R](https://rdrr.io/r/base/Reserved.html)
 
 
 ```{r, include = FALSE}
