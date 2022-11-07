@@ -54,6 +54,7 @@ You might be wondering, why bother to learn R at all??
   - As mentioned before, there are many resources available for beginner and more experienced users alike to be able to hone their skills.  
   
 ## Navigating RStudio
+### How do I use RStudio? 
 RStudio, is an interface that makes R more user-friendly. We will open the document you're reading now inside of RStudio. Before we do, let's take a look at the 4 main  windows or 'panes' we will work out of. 
 
 **Source**: This is the panel where you will write/view your code. Some outputs like data sets may also appear as a tab here. 
@@ -77,18 +78,30 @@ include_graphics("outline.PNG")
 
 
 ## File Structures
-File structure is important when it comes to coding. Some file structures you can work out of in RStudio include **projects**, **scripts** and **Rmarkdowns**. A project is a collection of work organized in a folder. It allows you to keep all the files associated with a project together in one place, which makes it easier to import, export, and edit your files. To open or create a new project, navigate to 'File'>'Open Project' or 'New Project'. 
+### What kind of files does R use?
+File structure is important when it comes to coding. Some file structures you can work out of in RStudio include **projects (.Rproj)**, **scripts (.R)** and **Rmarkdowns(.Rmd)**. A project is a collection of work organized in a folder. It allows you to keep all the files associated with a project together in one place, which makes it easier to import, export, and edit your files. To open or create a new project, navigate to 'File'>'Open Project' or 'New Project'. 
 
 Your project will typically include a mix of scripts and R markdown (Rmd) files. 
 
   - A script is a text file containing a set of commands and comments, it is the simplest version of a file that you can use in R. 
   - An Rmd file is a more stylized version of a script with formatted plain text and chunks of code that create a sophisticated output such as a PDF or HTML. 
   
+Below is an example of how scripts, markdown files, and projects will look like in both your file explorer, and in RStudio. 
+
+```{r graphic3, echo=FALSE, fig.align="center", out.height="65%", out.width="65%"}
+include_graphics("file_structure_explorer.PNG")
+```
+
+```{r graphic4, echo=FALSE, fig.align="center", out.height="75%", out.width="75%"}
+include_graphics("file_structure_rstudio.PNG")
+```
+
 You can work on scripts or Rmds independently instead of through a project, however if is best practice to create scripts/Rmd files within projects. 
 
 *Note: You may have already noticed that we've been highlighting 'best practices'. This is because there are many ways to achieve the same goal in R, which makes it very easy to lose track of what you're doing and how you're doing it. In general best practices revolve around organization, documentation, and version control (saving your progress).* 
 
 ## Rmarkdown
+### How does Rmarkdown work?
 Let's dive into some of the aspects of an Rmd file. There are certain formatting elements to keep in mind when writing code in an Rmd. As mentioned before, an Rmd can include plain text (narratives) like what you're reading right now.
 
 ```{r}
@@ -105,7 +118,7 @@ In the plain text, the formatting is slightly different. Instead of indicating t
 <br/><br/>
 
 #### Here is an example header using four #s 
-Do you notice how small the header is compared to the others in this document which mainly use two #s?
+Do you notice how small the header is compared to the one at the top of this section? The more #s there are, the smaller the header.
 <br/><br/>
 We also just used `<br/><br/>` to add extra breaks between paragraphs. Like #s, the number of `<br/>` you use indicates the size, or number of  breaks between paragraphs. <p> We could also use `<p>` to start a new paragraph instead of starting a new line manually. 
 <br/><br/>
@@ -124,13 +137,13 @@ We also just used `<br/><br/>` to add extra breaks between paragraphs. Like #s, 
 
 In addition to text format, there are a couple other elements of an Rmarkdown to highlight. At the beginning of the document, you may have noticed a title, author and date. These were set using output options which are defined at the beginning of the Rmd file along with the output file type. You can also set the theme of the markdown as well as other parameters, but we won't go into detail on those today. 
 
-```{r graphic3, echo=FALSE, fig.align="center"}
+```{r graphic6, echo=FALSE, fig.align="center"}
 include_graphics("r_header.PNG") 
 ```
 
 Let's take a closer look at `Sys.Date()` in the date parameter. This is an example of a function that executes a particular command. What does it do though? In order to look up help files for specific functions, go to the console in RStudio and enter `?Sys.Date()`. A help file will pop up in the 'Help' tab in the bottom right, which provides information on the function. Of note is the description, details, and examples. 
 
-```{r graphic4, echo=FALSE, fig.align="center", out.height="70%", out.width="70%"}
+```{r graphic7, echo=FALSE, fig.align="center", out.height="70%", out.width="70%"}
 include_graphics("help_file.PNG") 
 ```
 
@@ -138,6 +151,7 @@ include_graphics("help_file.PNG")
 
 ## Installing Packages and Loading Libraries
 
+### How do I begin coding?
 Now that we've learned about the basic format of our files, we have one more step before we can start executing commands. As we mentioned earlier R is open source, and there are many ways to achieve the same goal in R. Because of this, there are extensions to the programming language in the form of packages. Kind of like an expansion pack with new characters in a board game, packages are full of new functions that perform different tasks. 
 
 ### Necessary Functions
@@ -522,6 +536,8 @@ My_Vector <- c(9999)
 #### 7. Checking variable type
 
 ## Base Operators and Functions
+
+### How do I manipulate variables?
 Base R has some operators we can use to manipulate variables. We've already been using **assignment operators** which are used to assign values to vectors (ie. `<-`, `=`)  
 
 #### 1. Arithmetic Operators
@@ -718,8 +734,9 @@ There are several things to note about the syntax (format) of the if-else statem
   - *some print statements*
 
 ## (Re)Sources 
+### (Re)Sources
   - [Kate Miller's Intro to R IMD Training](https://github.com/KateMMiller/IMD_R_Training_Intro/blob/master/IMD_D1_M1_Intro_to_R_tab.Rmd)
-  - "[R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/)" Yihui Xie, Christophe Dervieux, Emily Riederer. 2022-09-09
+  - [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/) Yihui Xie, Christophe Dervieux, Emily Riederer. 2022-09-09
   - [R Markdown:the Definitive Guide](https://bookdown.org/yihui/rmarkdown/) Yihui Xie, J.J. Allaire, Garret Grolemund. 2022-04-11 
   - [Rmarkdown cheat sheet](https://www.rstudio.com/blog/the-r-markdown-cheat-sheet/)
 
