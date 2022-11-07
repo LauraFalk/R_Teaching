@@ -69,36 +69,41 @@ RStudio, is an interface that makes R more user-friendly. We will open the docum
 include_graphics("rstudio_session_4pane_layout.PNG")
 ```
 
-Throughout today's session we will have you run some of your own code in RStudio. Since the program's formatting is much different than what you may be used to, we recommend you use the document outline to navigate your way around.
-
-To do so, click the button in the source pane of RStudio as seen in the image below. You can then click on each section header within the outline to jump to that part of the document.
-```{r graphic2, echo=FALSE, fig.align="center", out.height="40%", out.width="40%"}
-include_graphics("outline.PNG")
-```
-
 
 ## File Structures
 ### What kind of files does R use?
 File structure is important when it comes to coding. Some file structures you can work out of in RStudio include **projects (.Rproj)**, **scripts (.R)** and **Rmarkdowns(.Rmd)**. A project is a collection of work organized in a folder. It allows you to keep all the files associated with a project together in one place, which makes it easier to import, export, and edit your files. To open or create a new project, navigate to 'File'>'Open Project' or 'New Project'. 
 
-Your project will typically include a mix of scripts and R markdown (Rmd) files. 
+**TO DO**: In RStudio, go to 'File'>'Open Project'>'Week_1_Basics_LC.Rproj'. The project directory should pop up in the 'Files' panel of RStudio. 
+
+Your project will typically include a mix of scripts and Rmarkdown files. Today your project also contains some PNG and HTML files. 
 
   - A script is a text file containing a set of commands and comments, it is the simplest version of a file that you can use in R. 
   - An Rmd file is a more stylized version of a script with formatted plain text and chunks of code that create a sophisticated output such as a PDF or HTML. 
   
-Below is an example of how scripts, markdown files, and projects will look like in both your file explorer, and in RStudio. 
+Below is an example of how scripts, markdown files, and projects will look like in both your file explorer, and in RStudio when opened. 
 
-```{r graphic3, echo=FALSE, fig.align="center", out.height="65%", out.width="65%"}
+```{r graphic2, echo=FALSE, fig.align="center", out.height="65%", out.width="65%"}
 include_graphics("file_structure_explorer.PNG")
 ```
 
-```{r graphic4, echo=FALSE, fig.align="center", out.height="75%", out.width="75%"}
+```{r graphic3, echo=FALSE, fig.align="center", out.height="75%", out.width="75%"}
 include_graphics("file_structure_rstudio.PNG")
 ```
+
+**TO DO**: Find and open the Week_1_Basics_LC.Rmd file using RStudio. It should open in the Source panel.  
 
 You can work on scripts or Rmds independently instead of through a project, however if is best practice to create scripts/Rmd files within projects. 
 
 *Note: You may have already noticed that we've been highlighting 'best practices'. This is because there are many ways to achieve the same goal in R, which makes it very easy to lose track of what you're doing and how you're doing it. In general best practices revolve around organization, documentation, and version control (saving your progress).* 
+
+Throughout today's session we will have you run some of your own code in RStudio. Since the program's formatting is much different than what you may be used to, we recommend you use the document outline to navigate your way around.
+
+To do so, click the button in the source pane of RStudio as seen in the image below. You can then click on each section header within the outline to jump to that part of the document.
+```{r graphic4, echo=FALSE, fig.align="center", out.height="40%", out.width="40%"}
+include_graphics("outline.PNG")
+```
+
 
 ## Rmarkdown
 ### How does Rmarkdown work?
