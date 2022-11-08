@@ -66,7 +66,7 @@ RStudio, is an interface that makes R more user-friendly. We will open the docum
 **Files/Plots/Packages/Help/Viewer**: This panel will show you the contents of the directories on your computer. The tabs will help you navigate and set the working directory, show any plots generated, show what packages are actively loaded, and display help files for R functions and packages. 
 
 ```{r graphic1, echo=FALSE, fig.align="center", out.height="65%", out.width="65%"}
-include_graphics("rstudio_session_4pane_layout.PNG")
+include_graphics("images/rstudio_session_4pane_layout.PNG")
 ```
 
 
@@ -84,11 +84,11 @@ Your project will typically include a mix of scripts and Rmarkdown files. Today 
 Below is an example of how scripts, markdown files, and projects will look like in both your file explorer, and in RStudio. 
 
 ```{r graphic2, echo=FALSE, fig.align="center", out.height="65%", out.width="65%"}
-include_graphics("file_structure_explorer.PNG")
+include_graphics("images/file_structure_explorer.PNG")
 ```
 
 ```{r graphic3, echo=FALSE, fig.align="center", out.height="60%", out.width="60%"}
-include_graphics("file_structure_rstudio.PNG")
+include_graphics("images/file_structure_rstudio.PNG")
 ```
 
 **TO DO**: Find and open the Week_1_Basics_LC.Rmd file using RStudio. It should open in the Source panel.  
@@ -101,7 +101,7 @@ Throughout today's session we will have you run some of your own code in RStudio
 
 To do so, click the button in the source pane of RStudio as seen in the image below. You can then click on each section header within the outline to jump to that part of the document.
 ```{r graphic4, echo=FALSE, fig.align="center", out.height="40%", out.width="40%"}
-include_graphics("outline.PNG")
+include_graphics("images/outline.PNG")
 ```
 
 
@@ -143,13 +143,13 @@ We also just used `<br/><br/>` to add extra breaks between paragraphs. Like #s, 
 In addition to text format, there are a couple other elements of an Rmarkdown to highlight. At the beginning of the document, you may have noticed a title, author and date. These were set using output options which are defined at the beginning of the Rmd file along with the output file type. You can also set the theme of the markdown as well as other parameters, but we won't go into detail on those today. 
 
 ```{r graphic6, echo=FALSE, fig.align="center"}
-include_graphics("r_header.PNG") 
+include_graphics("images/r_header.PNG") 
 ```
 
 Let's take a closer look at `Sys.Date()` in the date parameter. This is an example of a function that executes a particular command. What does it do though? In order to look up help files for specific functions, go to the console in RStudio and enter `?Sys.Date()`. A help file will pop up in the 'Help' tab in the bottom right, which provides information on the function. Of note is the description, details, and examples. 
 
 ```{r graphic7, echo=FALSE, fig.align="center", out.height="70%", out.width="70%"}
-include_graphics("help_file.PNG") 
+include_graphics("images/help_file.PNG") 
 ```
 
 **TO DO**: Go ahead and scroll to the top of the Rmd file in R studio and enter your name as the 'Learner'.
@@ -186,7 +186,7 @@ Now that we've loaded our packages and entered our name at the top of our docume
 
 **TO DO**:To render the document into an HTML, click the 'Knit' button at the top of the source pane. 
 ```{r graphic5, echo=FALSE, fig.align='center'}
-include_graphics("knit.PNG")
+include_graphics("images/knit.PNG")
 ```
 
 After a moment the HTML document should replace the help file in the bottom right, this time in the Viewer tab. You should now see your name at the top of the document! 
@@ -672,7 +672,7 @@ better_data
 ```
 Nice!! that was a taste of data wrangling which we'll cover more next time! 
 
-#### 5.	Miscillaneous Operators 
+#### 5.	Miscellaneous Operators 
 The `:` operator creates a series of numbers in sequence for a vector. In our indexing example, we had to type out all the numbers except for 3 and 8. Using the `:` operator is another way to make this a lot easier for us. 
 
 Example:
